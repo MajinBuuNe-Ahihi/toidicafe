@@ -1,0 +1,46 @@
+@import './varible';
+
+.page404 {
+  width: 100vw;
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: $secondary-color-label;
+  padding: 50px 0;
+}
+
+.page404__image {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page404__title {
+  color: $primary-color-text;
+  font-family: $font-family-heading;
+  font-weight: normal;
+  font-size: 34px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.page404__link {
+  display: flex;
+  justify-items: stretch;
+  align-items: stretch;
+  color: $secondary-color-label;
+  width: 200px;
+  height: 50px;
+}
+
+@media screen and (max-width: 990px) {
+  .page404 {
+    padding: 0;
+  }
+}
