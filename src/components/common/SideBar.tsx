@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import * as ICON from '../common'
 import { Social } from './Social'
 import { Button } from './Button'
+import { useAppDispatch } from '../../hooks'
+import { overlay } from '../../sliceredux'
 import '../../styles/sidebar.scss'
 import user from '../../assets/unnamed.jpg'
 import level from '../../assets/level.png'
@@ -24,20 +26,22 @@ let sidebarNav: Nav[] = [{ icon: <ICON.FaUserEdit size={25} />, name: 'chinh sua
   { icon: <ICON.HiOutlineMail size={25} />, name: 'lien he - gop y', link: '/', type: 3 }  
 ]
 
-export default function SideBar({}: Props) {
+export default function SideBar({ }: Props) {
+  const dispatch = useAppDispatch ()
+
   return (
     <div className='sidebar-component'>
       <div className='sidebar-container'>
         { true?
-          <div className='sidebar-profile-user'>
+          <Link to = {'/account'} className='sidebar-profile-user' onClick={()=>dispatch(overlay())}>
             <img src={user} alt='' className='sidebar-profile-user__image' />
-            <div className='sider-bar-profile-user-info'>
+            <span className='sider-bar-profile-user-info'>
               <span className='sidebar-profile-user-info__name'>
                 Hoang Van Manh
               </span>
               <img src={level} alt='' className='sidebar-profile-user-info__level' />
-            </div>
-          </div> : 
+            </span>
+          </Link> : 
           <div className='sider-bar-button-signin-signup'>
             <Button type={2} bg={1}>
             <span className='sigin-sigup-button'>
