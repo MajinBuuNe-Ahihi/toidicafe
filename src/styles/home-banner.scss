@@ -1,0 +1,96 @@
+@import './varible';
+
+.banner-desktop {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.banner-desktop-slogan-search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  gap: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.2s linear;
+  z-index: 1;
+  width:100%;
+  max-width: 1200px;
+  padding: 50px;
+}
+
+.banner-desktop-slogan-search-container__slogan {
+  color: $primary-color
+}
+
+.banner-desktop-slogan-search-container__title {
+  color: $primary-color
+}
+
+.video-banner {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  
+}
+
+.button-controls-video {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  color: $primary-color;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.banner-mobile {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background-image: url(../assets/banner.webp);
+  background-size: cover;
+}
+
+.banner-mobile {
+  .banner-desktop-slogan-search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+    gap: 30px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .banner-desktop-slogan-search-container__slogan {
+    font-size: 20px;
+    color: $primary-color
+  }
+
+  .banner-desktop-slogan-search-container__title {
+    display: none;
+  }
+}

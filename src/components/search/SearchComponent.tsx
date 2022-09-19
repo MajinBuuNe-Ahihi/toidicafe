@@ -3,8 +3,9 @@ import { CSSTransition } from 'react-transition-group';
 import { Input, BiSearch, AiOutlineLoading3Quarters, FaTimes } from '../common'
 import { useAppDispatch, useAppSelector, UseCheckpoint } from '../../hooks'
 import SearchResult from './SearchResult';
-import { overlay } from '../../sliceredux';
+import { overlay, searchhomedesktop,searchmobile} from '../../sliceredux';
 import '../../styles/search.scss'
+import id from 'date-fns/esm/locale/id/index.js';
 
 type Props = {
   type: string, //type class search
@@ -27,9 +28,25 @@ export function SearchComponent(props: Props) {
     if (props.setTrigger != undefined) {
       props.setTrigger(4);
     }
+
+    if (props.currentPath === '/')
+    { 
+      if (props.type != 'home-search') {
+        dispatch(searchmobile())
+      } else {
+        dispatch(searchhomedesktop())
+      }
+    }
   }
 
-  let outFocusOpenModal = () => setOpen(false)
+
+  let outFocusOpenModal = () => {
+    setOpen(false);
+    if (props.currentPath === '/' && props.type == 'home-search' )
+    { 
+      dispatch(overlay())
+    }
+  }
   
   
   return (
@@ -39,7 +56,7 @@ export function SearchComponent(props: Props) {
         <Input type='text' name='search' value={value} onFocus={onFocusOpenModal} onBlur={outFocusOpenModal} className={props.type + '-input'}
             placeholder={props.placeholder} onChange={(e: Event) => { const result = (e.target as HTMLInputElement) ; setValue(result.value || '') }} />
       {
-        props?.currentPath === '/' ?
+        props?.currentPath === '/' && props.type == 'home-search' ?
         <div className='search-button-home'>
           <span className='search-button-home__icon'>
             <BiSearch size={25} />
@@ -48,7 +65,7 @@ export function SearchComponent(props: Props) {
             Search
           </span>
         </div> :
-              <span className={`${props.type}-icon`}>
+          <span className={`${props.type}-icon`}>
           <BiSearch size={20}/>
         </span>
       }
@@ -66,7 +83,7 @@ export function SearchComponent(props: Props) {
       : null
       }
       <CSSTransition
-        in={open && props?.trigger == 4}
+        in={open && (props?.trigger == 4 || triggerSidebar == 7) && props.type != 'home-search-mobile'}
         timeout={500}
         unmountOnExit
         classNames='modal-dropdown'
@@ -74,7 +91,7 @@ export function SearchComponent(props: Props) {
         <SearchResult value={value} />
       </CSSTransition>
       {
-        triggerSidebar == 6 &&<>
+        triggerSidebar == 6 && props.type != 'home-search-mobile' &&<>
           <div className='search-cancel-button-sidebar' onClick={()=> dispatch(overlay())}>
           Huy
           </div>

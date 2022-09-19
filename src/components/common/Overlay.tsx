@@ -8,8 +8,8 @@ export function Overlay({ }: Props) {
   const dispatch = useAppDispatch()
   return (
     <>
-    {
-    (trigger == 5 || trigger == 6)&&<div id='overlay-component' onClick={()=>dispatch(overlay())}>
+      {
+        ([5,6,7].includes(trigger))&&<div id='overlay-component' onClick={()=>dispatch(overlay())}>
 
     </div>
     }
