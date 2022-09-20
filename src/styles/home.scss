@@ -3,8 +3,46 @@
 .home-section {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   overflow-x: hidden;
+  margin-bottom: 80px;
+}
+
+.home-section-component {
+  padding: 50px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  gap: 30px;
+  
+}
+
+.home-section-title {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  &::after {
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 2px;
+    background-color: $secondary-color;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
 }

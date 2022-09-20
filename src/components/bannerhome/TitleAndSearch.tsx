@@ -9,7 +9,7 @@ export default function TitleAndSearch({ }: Props) {
   const trigger = useAppSelector(state => state.trigger.value);
   const { deviceCurrent } = UseCheckpoint('');
   return (
-    <div className='banner-desktop-slogan-search-container' style={trigger==7?{ zIndex: 99999, transform: 'translate(-50%,-100%)'}:{}}>
+    <div className='banner-desktop-slogan-search-container' style={trigger==7?{ zIndex: 99999, transform: 'translate(-50%,-70%)'}:{}}>
     <h1 className='banner-desktop-slogan-search-container__slogan'>
         <Typewriter
         options={{
