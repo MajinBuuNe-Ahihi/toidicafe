@@ -53,6 +53,7 @@ export default function HomeSlide({ }: Props) {
       slidesPerView={deviceCurrent == 'mobile'?1:deviceCurrent=='tablet'?2:3}
       autoplay={{
         delay: 2500,
+        disableOnInteraction: false,
       }}
       pagination={{
         clickable: true,
