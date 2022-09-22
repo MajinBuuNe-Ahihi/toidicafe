@@ -65,6 +65,12 @@
   max-width: 1200px;
 }
 
+.famous-destination { 
+  .mySwiper {
+    height: 380px;
+  }
+}
+
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
   background: $secondary-color !important;

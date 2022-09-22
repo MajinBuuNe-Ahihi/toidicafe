@@ -1,8 +1,8 @@
 import { ReactNode, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import Skeleton,{ SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { Link } from 'react-router-dom';
-import 'react-loading-skeleton/dist/skeleton.css'
 import '../../styles/card.scss';
 
 type Props = {
@@ -10,17 +10,16 @@ type Props = {
     alt: string,
     src: string
   },
-  children?: ReactNode
+  children?: ReactNode,
+  type?: string
 }
 
-export default function CardSlide({ image, children }: Props) {
+export default function CardItem({ image, children,type }: Props) {
   const [opacity,setOpacity] = useState<number>(0)
   return (
-    <Link to={'/'} className="card-slide-component">
-      <span className="card-slide-component-inner">
-        {children}
-      </span>
-      <LazyLoadImage className='card-slide-component-image'
+    
+    <Link to={'/'} className={`card-item-component ${type?'card-item-famous': ''}`}>
+      <LazyLoadImage className='card-item-component-image'
         alt={image.alt}
         src={image.src}
         effect="blur"
@@ -30,6 +29,9 @@ export default function CardSlide({ image, children }: Props) {
         afterLoad={() =>setOpacity(1)}
         style={{opacity}}
       />
+      <span className="card-item-component-inner">
+        {children}
+      </span>
       {
         opacity == 0 && <SkeletonTheme baseColor="#ffffff" duration={3} highlightColor="#ee0033">
           <Skeleton className='skeleton-card-slide' count={1}/>

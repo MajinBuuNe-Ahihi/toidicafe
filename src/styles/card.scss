@@ -1,6 +1,6 @@
 @import './varible';
 
-.card-slide-component {
+.card-item-component {
   height: 100%;
   width: 100%;
   display: flex;
@@ -13,7 +13,15 @@
   border-radius: 10px;
 }
 
-.card-slide-component-inner {
+.card-item-famous {
+  height: 300px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $shadow-button;
+}
+
+.card-item-component-inner {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -29,6 +37,66 @@
   }
 }
 
+.famous-destination {
+  .card-item-component-inner {
+    left: 100px;
+    top: 80%;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    h1 {
+      display: inline-block;
+      font-size: 30px;
+      text-transform: capitalize;
+      color: $primary-color;
+    }
+    span {
+      display: inline-block;
+      font-size: 20px;
+      text-transform: capitalize;
+      color: $primary-color;
+    }
+  }
+}
+
+.card-item-famous {
+  .card-item-component-inner {
+    position: unset;
+    width: 100%;
+    left: unset;
+    top: unset;
+    transform: translate(0%, 0%);
+    z-index: unset;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    height: 100px;
+    padding: 10px;
+
+    h1 {
+      font-size: 25px;
+      text-transform: capitalize;
+      color: $primary-color-text;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    span {
+      color: $primary-color-text;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+
 .home-secion-container {
   width: 100%;
   height: 100%;
@@ -37,8 +105,8 @@
   align-items: stretch;
 }
 
-.card-slide-component-image {
-  filter: brightness(40%);
+.card-item-component-image {
+  filter: brightness(70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,6 +117,15 @@
   transition: 0.6s linear;
   &:hover {
     transform: scale(1.2);
+  }
+}
+.card-item-famous { 
+  .card-item-component-image {
+    height: 220px !important;
+    border-radius: 10px 10px 0 0;
+    &:hover {
+        transform: scaleX(1.1);
+    }
   }
 }
 

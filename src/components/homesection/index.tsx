@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react'
+import HomeSlide from './HomeSlide'
 import '../../styles/home.scss'
 type Props = {
-  children: ReactElement,
   title: string,
-  subclass: string
+  subclass: string,
+  children: ReactElement
 }
-
 export default function HomeSection(props: Props) {
   return (
     <div className={`home-section-component ${props.subclass}`}>

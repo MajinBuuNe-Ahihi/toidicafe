@@ -43,6 +43,32 @@
     bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
 
+.famous-destionation-wrapper {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .famous-destionation-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .famous-destionation-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .famous-destionation-wrapper {
+    grid-template-columns: 1fr;
   }
 }
