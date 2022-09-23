@@ -26,11 +26,13 @@
 .promotion-header__heading { 
   grid-area: h;
   font-size: 30px;
+  line-height: 120%;
 }
 
 .promotion-header__text { 
   grid-area: t;
   font-size: 18px;
+  line-height: 116%;
 }
 
 .promotion-header__image {
