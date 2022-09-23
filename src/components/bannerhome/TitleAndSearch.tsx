@@ -1,5 +1,5 @@
 import Typewriter from 'typewriter-effect';
-import { useAppSelector, UseCheckpoint } from '../../hooks';
+import { useAppSelector, useCheckpoint } from '../../hooks';
 import '../../styles/home-banner.scss';
 import { SearchComponent } from '../search';
 
@@ -7,7 +7,7 @@ type Props = {}
 
 export default function TitleAndSearch({ }: Props) {
   const trigger = useAppSelector(state => state.trigger.value);
-  const { deviceCurrent } = UseCheckpoint('');
+  const { deviceCurrent } = useCheckpoint('');
   return (
     <div className='banner-desktop-slogan-search-container' style={trigger==7?{ zIndex: 99999, transform: 'translate(-50%,-70%)'}:{}}>
     <h1 className='banner-desktop-slogan-search-container__slogan'>

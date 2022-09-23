@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 type Props = {}
 
-export function UseCheckpoint({ }: Props) {
+export function useCheckpoint({ }: Props) {
   const [deviceCurrent,setDeviceCurrent] = useState(window.innerWidth <= 989?'mobile':window.innerWidth >= 1280?'desktop':'tablet')
   useEffect(() => {
     let checkpoint = () => {

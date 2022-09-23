@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import menu from '../../assets/menu.svg';
-import { UseCheckpoint } from '../../hooks';
+import { useCheckpoint } from '../../hooks';
 import '../../styles/header.scss';
 import * as ICON from '../common';
 
@@ -12,7 +12,7 @@ type Props = {
 }
 
 export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
-  const { deviceCurrent } = UseCheckpoint('');
+  const { deviceCurrent } = useCheckpoint('');
   const [open, setOpen] = useState<boolean>(false); 
 
   let openDropDown = () => {
@@ -48,17 +48,17 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
         </Link>
       </div>
     </> :
-    <div className="header-menu">
-      <div className="header-menu-button" onClick={() => openDropDown()}>
-        <img src={menu} alt="" className="header-menu-button__image" />
+    <div className='header-menu'>
+      <div className='header-menu-button' onClick={() => openDropDown()}>
+        <img src={menu} alt='' className='header-menu-button__image' />
       </div> 
       <CSSTransition
         in={open && trigger == 1}
         timeout={300}
         unmountOnExit
-        classNames="modal-dropdown"
+        classNames='modal-dropdown'
       >
-      <div className="header-menu-dropdown">
+      <div className='header-menu-dropdown'>
         <div className={'header-menu-dropdown-explore'}>
           <Link to={'/explore'} >
             <span className={'header-menu-dropdown-explore__icon'}>

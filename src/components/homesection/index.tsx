@@ -9,10 +9,10 @@ type Props = {
 export default function HomeSection(props: Props) {
   return (
     <div className={`home-section-component ${props.subclass}`}>
-      <div className="home-section-title">
+      <div className='home-section-title'>
         {props.title}
       </div>
-      <div className="home-secion-container">
+      <div className='home-secion-container'>
         {props.children}
       </div>
     </div>

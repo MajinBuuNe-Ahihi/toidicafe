@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { UseCheckpoint } from '../../hooks';
+import { useCheckpoint } from '../../hooks';
 import 'swiper/css';
 import '../../styles/slide.scss';
 import CardItem from './CardItem';
@@ -9,7 +9,7 @@ type Props = {
   card: {children: ReactElement,image: {src: string, alt: string}}[]
 }
 export default function HomeSlide({ card }: Props) {
-  const { deviceCurrent } = UseCheckpoint('');
+  const { deviceCurrent } = useCheckpoint('');
   return (
     <Swiper
       spaceBetween={20}
@@ -23,7 +23,7 @@ export default function HomeSlide({ card }: Props) {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper"
+      className='mySwiper'
     >
       {
         card.map((item,index) =>

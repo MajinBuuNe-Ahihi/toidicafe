@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import user from '../../assets/unnamed.jpg'
 import { UserDropDown } from './UserDropDown'
 import '../../styles/userdropdown.scss'
-import { UseCheckpoint } from '../../hooks';
+import { useCheckpoint } from '../../hooks';
 
 type Props = {
   trigger: number,
@@ -12,7 +12,7 @@ type Props = {
 
 export function UserHeader({trigger,setTrigger }: Props) {
   const [open, setOpen] = useState<boolean>(false);
-  const { deviceCurrent } = UseCheckpoint('')
+  const { deviceCurrent } = useCheckpoint('')
 
   let openDropDown = () => {
     setOpen(pre => !pre);
@@ -32,7 +32,7 @@ export function UserHeader({trigger,setTrigger }: Props) {
         in={open && trigger == 3}
         timeout={500}
         unmountOnExit
-        classNames="modal-dropdown"
+        classNames='modal-dropdown'
       >
         <UserDropDown/>
       </CSSTransition>

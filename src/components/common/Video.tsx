@@ -23,7 +23,7 @@ const Video:React.ForwardRefRenderFunction<HandleVideo,Props> = (props, ref) => 
   },[reload])
   return (
   <video key={reload} className='video-banner' ref={videoref} muted autoPlay={true} loop >
-      <source  src={'https://res.cloudinary.com/hauimanhneahihi/video/upload/v1663579636/5_lesser-known_cafes_in_Hanoi_for_first-time_visitors___Exotic_Voyages_fkqgvc.mp4#t=13,147'} type="video/mp4"/>
+      <source  src={'https://res.cloudinary.com/hauimanhneahihi/video/upload/v1663579636/5_lesser-known_cafes_in_Hanoi_for_first-time_visitors___Exotic_Voyages_fkqgvc.mp4#t=13,147'} type='video/mp4'/>
   </video>
   )
 }

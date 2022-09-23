@@ -22,18 +22,18 @@ export default function CardItem({ image, children,type }: Props) {
       <LazyLoadImage className='card-item-component-image'
         alt={image.alt}
         src={image.src}
-        effect="blur"
+        effect='blur'
         width={'100%'}
         height={'100%'}
         beforeLoad={() => setOpacity(0)}
         afterLoad={() =>setOpacity(1)}
         style={{opacity}}
       />
-      <span className="card-item-component-inner">
+      <span className='card-item-component-inner'>
         {children}
       </span>
       {
-        opacity == 0 && <SkeletonTheme baseColor="#ffffff" duration={3} highlightColor="#ee0033">
+        opacity == 0 && <SkeletonTheme baseColor='#ffffff' duration={3} highlightColor='#ee0033'>
           <Skeleton className='skeleton-card-slide' count={1}/>
           </SkeletonTheme>
       }

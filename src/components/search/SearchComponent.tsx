@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import { Input, BiSearch, AiOutlineLoading3Quarters, FaTimes } from '../common'
-import { useAppDispatch, useAppSelector, UseCheckpoint } from '../../hooks'
+import { useAppDispatch, useAppSelector, useCheckpoint } from '../../hooks'
 import SearchResult from './SearchResult';
 import { overlay, searchhomedesktop,searchmobile} from '../../sliceredux';
 import '../../styles/search.scss'
@@ -17,7 +17,7 @@ type Props = {
 
 export function SearchComponent(props: Props) {
   const [value, setValue] = useState<string>('');
-  const { deviceCurrent } = UseCheckpoint('');
+  const { deviceCurrent } = useCheckpoint('');
   const [open, setOpen] = useState<boolean>(false);
   const [isloading, setIsloading] = useState<boolean>(false);
   const triggerSidebar = useAppSelector((state) => state.trigger.value);

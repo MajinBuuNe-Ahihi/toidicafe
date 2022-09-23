@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { Footer, Header,NavigationMobile  } from '../common'
-import { useAppSelector, UseCheckpoint } from '../../hooks'
+import { useAppSelector, useCheckpoint } from '../../hooks'
 import { CSSTransition } from 'react-transition-group'
 import SideBar from '../common/SideBar'
 import { SearchComponent } from '../search'
@@ -10,7 +10,7 @@ type Props = {}
 
 export function MainLayout({ }: Props) {
   const trigger = useAppSelector((state) => state.trigger.value)
-  const { deviceCurrent } = UseCheckpoint('');
+  const { deviceCurrent } = useCheckpoint('');
   return (
     <div className='MainLayout'>
       <Header></Header>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import { UseCheckpoint } from '../../hooks'
+import { useCheckpoint } from '../../hooks'
 import bell from '../../assets/bell2.svg'
 import '../../styles/notification.scss'
 import { NotificationDropDown } from './NotificationDropDown'
@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const Notification = (props: Props) => {
-  const {deviceCurrent} = UseCheckpoint('')
+  const {deviceCurrent} = useCheckpoint('')
   const [open, setOpen] = useState<boolean>(false)
   const openDropDown = () => {
     setOpen(pre => !pre)
@@ -22,7 +22,7 @@ export const Notification = (props: Props) => {
   }, [deviceCurrent])
   
   return (
-    <div className="header-notification">
+    <div className='header-notification'>
       <div className='header-notification-button' onClick={()=>openDropDown()}>
         <img className='header-notification-button__icon' src={bell} />
       </div>
@@ -30,7 +30,7 @@ export const Notification = (props: Props) => {
         in={open && props.trigger == 2}
         timeout={500}
         unmountOnExit
-        classNames="modal-dropdown"
+        classNames='modal-dropdown'
       >
         <NotificationDropDown />
       </CSSTransition>

@@ -16,8 +16,8 @@ export function Footer({ }: Props) {
     <div className='footer'>
       <div className='footer-top'>
         <div className='footer-top-container'>
-          <div className="footer-carton">
-            <img src={carton} alt="" className="footer-carton__image" />
+          <div className='footer-carton'>
+            <img src={carton} alt='' className='footer-carton__image' />
           </div>
           <div className='footer-top-container__col3'>
             <div className='footer-top__footer-logo'>

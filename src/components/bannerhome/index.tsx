@@ -2,13 +2,13 @@ import React, { useRef } from 'react'
 import Video from '../common/Video'
 import BannerDesktop from './BannerDesktop'
 import '../../styles/home-banner.scss'
-import { UseCheckpoint } from '../../hooks'
+import { useCheckpoint } from '../../hooks'
 import BannerMobile from './BannerMobile'
 
 type Props = {}
 
 export default function BannerHome({ }: Props) {
-  const { deviceCurrent } = UseCheckpoint('');
+  const { deviceCurrent } = useCheckpoint('');
   return (
     <>
     {

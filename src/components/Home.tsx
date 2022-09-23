@@ -1,43 +1,43 @@
-import React, { ElementRef, useEffect, useRef } from 'react'
 import BannerHome from './bannerhome';
-import Video from './common/Video';
-import '../styles/home-banner.scss'
 import HomeSection from './homesection';
 import HomeSlide from './homesection/HomeSlide';
 import ListItemFamous from './homesection/ListItemFamous';
+import image from '../assets/suggest-place.svg'
+import '../styles/home-banner.scss';
+import { Button } from './common';
 const card = [{
   children: <h1>Lam viec</h1>,
   image: {
     src: 'https://toidicafe.vn/static/images/purpose/lam-viec-1647441292275.jpeg?w=960',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
   children: <h1>hen ho</h1>,
   image: {
     src: 'https://toidicafe.vn/static/images/purpose/hen-ho-1647441284779.jpeg',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
   children: <h1>doc sach</h1>,
   image: {
     src: 'https://toidicafe.vn/static/images/purpose/doc-sach-1647441276414.jpeg',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
   children: <h1>chill</h1>,
   image: {
     src: 'https://toidicafe.vn/static/images/purpose/chill-1647441264959.jpeg?w=960',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
   children: <h1>song ao</h1>,
   image: {
     src: 'https://toidicafe.vn/static/images/purpose/song-ao-1647441301274.jpeg?w=960',
-    alt: "text"
+    alt: 'text'
   }
   }
 ]
@@ -48,7 +48,7 @@ const card2 = [{
   </>,
   image: {
     src: 'https://toidicafe.vn/static/images/region/tay-ho-1647433156043.jpeg?w=960',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
@@ -58,7 +58,7 @@ const card2 = [{
   </>,
   image: {
     src: 'https://toidicafe.vn/static/images/region/ba-dinh-1647433057947.jpeg',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
@@ -68,7 +68,7 @@ const card2 = [{
   </>,
   image: {
     src: 'https://toidicafe.vn/static/images/region/hoan-kiem-1647433147220.jpeg',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
@@ -78,7 +78,7 @@ const card2 = [{
   </>,
   image: {
     src: 'https://toidicafe.vn/static/images/region/dong-da-1647433142184.jpeg',
-    alt: "text"
+    alt: 'text'
   }
   },
   {
@@ -88,7 +88,7 @@ const card2 = [{
   </>,
   image: {
     src: 'https://toidicafe.vn/static/images/region/cau-giay-1647433134263.jpeg?w=960',
-    alt: "text"
+    alt: 'text'
   }
   }
 ]
@@ -98,11 +98,16 @@ export function Home({ }: Props) {
   
   
   return (
-    <div className="home-section">
+    <div className='home-section'>
       <BannerHome />
       <HomeSection subclass='pupose-need' title='Mục đích bạn cần ?' children={<HomeSlide card={card}/>} />
       <HomeSection subclass='famous-destination' title='Khu vực gần đây' children={<HomeSlide card={card2} />} /> 
-      <HomeSection subclass='best-destination' title='Địa điểm nổi bật' children={<ListItemFamous/>} /> 
+      <HomeSection subclass='best-destination' title='Địa điểm nổi bật' children={<ListItemFamous />} /> 
+      <div className='home-section-suggest-place'>
+        <img className='home-section-suggest-place__img' src={image} alt='suggest place' />
+        <span className='home-section-suggest-place__text' >Chung toi co bo lo dia diem nao ma ban biet</span>
+        <Button className={'home-section-suggest-place__button-suggest-palace'} type={2} bg={1} children={<>Dong Gop Dia Diem</>} ></Button>
+      </div>
     </div>
   )
 }
