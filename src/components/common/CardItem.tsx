@@ -11,15 +11,16 @@ type Props = {
     src: string
   },
   children?: ReactNode,
-  type?: string
+  type?: string,
+
 }
 
-export default function CardItem({ image, children,type }: Props) {
+export  function CardItem({ image, children,type }: Props) {
   const [opacity,setOpacity] = useState<number>(0)
   return (
     
-    <Link to={'/'} className={`card-item-component ${type?'card-item-famous': ''}`}>
-      <LazyLoadImage className='card-item-component-image'
+    <Link to={'/'} className={`card-item-component card-item-component--${type}`}>
+      <LazyLoadImage className={`card-item-component-image card-item-component-image--${type}`}
         alt={image.alt}
         src={image.src}
         effect='blur'
@@ -29,7 +30,7 @@ export default function CardItem({ image, children,type }: Props) {
         afterLoad={() =>setOpacity(1)}
         style={{opacity}}
       />
-      <span className='card-item-component-inner'>
+      <span className={`card-item-component-inner card-item-component-inner--${type}`}>
         {children}
       </span>
       {

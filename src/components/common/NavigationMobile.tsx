@@ -41,7 +41,7 @@ export const NavigationMobile = (props: Props) => {
           </NavLink>
         </li>
         <li className='navigation-mobile-element'>
-          <NavLink to={'/discount'}
+          <NavLink to={'/promo'}
            style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
             <span>
               <ICON.TbDiscount2 size={25}/>

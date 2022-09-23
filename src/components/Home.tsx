@@ -100,9 +100,9 @@ export function Home({ }: Props) {
   return (
     <div className='home-section'>
       <BannerHome />
-      <HomeSection subclass='pupose-need' title='Mục đích bạn cần ?' children={<HomeSlide card={card}/>} />
-      <HomeSection subclass='famous-destination' title='Khu vực gần đây' children={<HomeSlide card={card2} />} /> 
-      <HomeSection subclass='best-destination' title='Địa điểm nổi bật' children={<ListItemFamous />} /> 
+      <HomeSection subclass='pupose-need' title='Mục đích bạn cần ?' children={<HomeSlide card={card} type={'pupose-need'} />} />
+      <HomeSection subclass='near-you' title='Khu vực gần đây' children={<HomeSlide card={card2} type={'near-you'} />} /> 
+      <HomeSection subclass='famous-destination' title='Địa điểm nổi bật' children={<ListItemFamous />} /> 
       <div className='home-section-suggest-place'>
         <img className='home-section-suggest-place__img' src={image} alt='suggest place' />
         <span className='home-section-suggest-place__text' >Chung toi co bo lo dia diem nao ma ban biet</span>

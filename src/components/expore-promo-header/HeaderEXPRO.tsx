@@ -38,7 +38,7 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
         </Link>
       </div>
       <div className={'header-discount'}>
-        <Link to={'/discount'} >
+        <Link to={'/promo'} >
           <span className={'header-discount__icon'}>
             <ICON.TbDiscount2 size={25}/>
           </span>

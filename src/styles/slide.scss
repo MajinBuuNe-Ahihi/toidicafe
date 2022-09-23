@@ -58,17 +58,18 @@
   line-height: 1;
 }
 
-.mySwiper {
+.my-slide {
   width: 100%;
-  height: 280px;
   position: relative;
   max-width: 1200px;
 }
 
-.famous-destination { 
-  .mySwiper {
-    height: 380px;
-  }
+.my-slide--pupose-need{
+  height: 250px;
+}
+
+.my-slide--near-you{
+  height: 380px;
 }
 
 .swiper-pagination-bullet-active {

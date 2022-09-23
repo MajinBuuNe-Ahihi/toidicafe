@@ -2,13 +2,14 @@ import { ReactElement } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useCheckpoint } from '../../hooks';
+import { CardItem } from '../common';
 import 'swiper/css';
 import '../../styles/slide.scss';
-import CardItem from './CardItem';
 type Props = {
-  card: {children: ReactElement,image: {src: string, alt: string}}[]
+  card: { children: ReactElement, image: { src: string, alt: string } }[],
+  type: string
 }
-export default function HomeSlide({ card }: Props) {
+export default function HomeSlide({ card,type }: Props) {
   const { deviceCurrent } = useCheckpoint('');
   return (
     <Swiper
@@ -23,12 +24,12 @@ export default function HomeSlide({ card }: Props) {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className='mySwiper'
+      className={`my-slide my-slide--${type}`}
     >
       {
         card.map((item,index) =>
         <SwiperSlide key={index}>
-          <CardItem image={item.image} children={item.children} />
+            <CardItem image={item.image} children={item.children} type={type} />
         </SwiperSlide>
        )
       }

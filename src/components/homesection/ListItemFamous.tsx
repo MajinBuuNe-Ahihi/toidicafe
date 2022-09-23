@@ -1,5 +1,5 @@
 import React from 'react'
-import CardItem from './CardItem';
+import { CardItem } from '../common';
 import { useCheckpoint } from '../../hooks';
 import '../../styles/home.scss'
 
@@ -74,7 +74,7 @@ const card2 = [{
     alt: 'text'
   }
   },
-        {
+  {
   children:<>
     <h1>The Running Bean</h1>
     <span>22 Nha tho, hoan kiem</span>
@@ -91,7 +91,7 @@ function ListItemFamous({ }: Props) {
     <div className='famous-destionation-wrapper'>
       { 
         card2.slice(0,deviceCurrent == 'mobile'?3:card2.length).map((item,index) =>
-        <CardItem image={item.image} children={item.children} type={'famous'} />
+        <CardItem image={item.image} children={item.children} type={'famous-destination'} />
         )
       }
     </div>
