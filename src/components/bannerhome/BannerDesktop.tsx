@@ -14,7 +14,7 @@ export default function BannerDesktop({ }: Props) {
     ref.current?.play();
     setTrigger(false);
   }, [])
-  console.log(ref.current?.status() )
+
   return (
     <div className='banner-desktop'>
       <TitleAndSearch />

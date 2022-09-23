@@ -1,0 +1,53 @@
+@import './varible';
+
+.button-scroll-top {
+  position: fixed;
+  right: 100px;
+  bottom: 290px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $secondary-color;
+  z-index: 9999;
+  svg{
+    filter: invert(1);
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.button-scroll-enter {
+  transform: translateX(calc(100% + 100px));
+}
+
+.button-scroll-enter-active {
+  transform: translateX(0%);
+  transform-origin: 100% 50%;
+  transition: transform  300ms;
+}
+
+.button-scroll-exit {
+  transform: translateX(0%);
+}
+
+.button-scroll-exit-active {
+  transform: translateX(calc(100% + 100px));
+  transform-origin: 100% 50%;
+  transition: transform  300ms;
+}
+
+@media screen and (max-width: 990px) {
+  .button-scroll-top {
+      right: 30px;
+      bottom: 120px;
+  }
+  .button-scroll-enter {
+    transform: translateX(calc(100% + 30px));
+  }
+  .button-scroll-exit-active {
+    transform: translateX(calc(100% + 30px));
+  }
+}

@@ -19,6 +19,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *::selection {
@@ -26,13 +27,26 @@
   color: #ffffff;
 }
 
+
 a {
   text-decoration: none;
 }
 
 html {
   font-size: 62,5%;
+  scroll-behavior: smooth;
 }
+
+*::-webkit-scrollbar {
+  width: 6px;
+  background-color: #ee003428;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ee0033;
+  border-radius: 25px;
+}
+
 
 body {
   margin: 0;

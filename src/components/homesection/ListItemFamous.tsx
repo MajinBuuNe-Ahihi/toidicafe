@@ -91,7 +91,7 @@ function ListItemFamous({ }: Props) {
     <div className='famous-destionation-wrapper'>
       { 
         card2.slice(0,deviceCurrent == 'mobile'?3:card2.length).map((item,index) =>
-        <CardItem image={item.image} children={item.children} type={'famous-destination'} />
+        <CardItem key={index} image={item.image} children={item.children} type={'famous-destination'} />
         )
       }
     </div>

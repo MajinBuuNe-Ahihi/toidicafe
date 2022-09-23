@@ -5,7 +5,7 @@ export { AiTwotoneFire,AiOutlineInstagram,AiOutlineLoading3Quarters } from 'reac
 export { ImHome } from 'react-icons/im'
 export { HiLocationMarker, HiViewGrid, HiOutlineMail, HiOutlineInformationCircle } from 'react-icons/hi'
 export { SiTiktok } from 'react-icons/si'
-export { RiCopyrightLine } from 'react-icons/ri'
+export { RiCopyrightLine, RiArrowUpCircleFill } from 'react-icons/ri'
 export { BiPowerOff, BiSearch, BiCheckShield } from 'react-icons/bi'
 export { GrMapLocation } from 'react-icons/gr'
 export { TiLocationArrowOutline } from 'react-icons/ti'

@@ -17,9 +17,12 @@ const Video:React.ForwardRefRenderFunction<HandleVideo,Props> = (props, ref) => 
       return !videoref.current?.paused;
     }
   }))
-  let time = setTimeout(() => setReload(pre => pre + 1), 134000)
+
   useEffect(() => {
-    return clearTimeout(time)
+    let time = setTimeout(() => setReload(pre => pre + 1), 134000)
+    return () => {
+      clearTimeout(time)
+    }
   },[reload])
   return (
   <video key={reload} className='video-banner' ref={videoref} muted autoPlay={true} loop >

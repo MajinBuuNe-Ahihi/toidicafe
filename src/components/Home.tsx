@@ -5,6 +5,8 @@ import ListItemFamous from './homesection/ListItemFamous';
 import image from '../assets/suggest-place.svg'
 import '../styles/home-banner.scss';
 import { Button } from './common';
+import {useScrollPostion} from '../hooks';
+
 const card = [{
   children: <h1>Lam viec</h1>,
   image: {
@@ -95,8 +97,6 @@ const card2 = [{
 
 type Props = {}
 export function Home({ }: Props) {
-  
-  
   return (
     <div className='home-section'>
       <BannerHome />

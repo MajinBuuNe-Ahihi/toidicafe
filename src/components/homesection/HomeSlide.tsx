@@ -16,7 +16,7 @@ export default function HomeSlide({ card,type }: Props) {
       spaceBetween={20}
       slidesPerView={deviceCurrent == 'mobile'?1:deviceCurrent=='tablet'?2:3}
       autoplay={{
-        delay: 2500,
+        delay: type == 'near-you'?2500:2000,
         disableOnInteraction: false,
       }}
       pagination={{
