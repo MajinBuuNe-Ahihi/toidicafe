@@ -64,6 +64,9 @@
 }
 
 @media screen and (max-width: 989px) {
+  .promotion-container {
+    margin-bottom: 80px;
+  }
   .promotion-list {
     grid-template-columns: 1fr 1fr;
   }
