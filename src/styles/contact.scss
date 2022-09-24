@@ -21,12 +21,13 @@
 .contact-heading__title {
   font-size: 30px;
   font-family: $font-family-heading;
+  color: $primary-color-text;
 }
 
 .contact-heading__text {
   font-size: 18px;
   line-height: 130%;
-
+  color: $primary-color-text;
 }
 
 .contact-form {
@@ -43,6 +44,7 @@
   margin-bottom: 10px;
   font-size: 17px;
   font-weight: bold;
+  color: $primary-color-text;
 }
 
 .contact-form__input {
