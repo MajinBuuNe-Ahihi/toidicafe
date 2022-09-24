@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import menu from '../../assets/menu.svg';
 import { useCheckpoint } from '../../hooks';
@@ -15,6 +15,15 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
   const { deviceCurrent } = useCheckpoint('');
   const [open, setOpen] = useState<boolean>(false); 
 
+  let activeStyle:React.CSSProperties = {
+    borderBottom: '1px solid #ee0033',
+    color: '#ee0033'
+  }
+
+  let unActiveStyle:React.CSSProperties = {
+    borderTop: 'none'
+  }
+
   let openDropDown = () => {
     setOpen(pre => !pre)
     setTrigger(1)
@@ -28,24 +37,24 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
       {deviceCurrent !== 'tablet' ? 
       <>
       <div className={'header-explore'}>    
-      <Link to={'/explore'} >
+      <NavLink to={'/explore'}  style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
         <span className={'header-explore__icon'}>
           <ICON.FaSlackHash size={25}/>
         </span>
         <span className={'header-explore__text'}>
           Kham pha
         </span>
-        </Link>
+        </NavLink>
       </div>
       <div className={'header-discount'}>
-        <Link to={'/promo'} >
+        <NavLink to={'/promo'} style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
           <span className={'header-discount__icon'}>
             <ICON.TbDiscount2 size={25}/>
           </span>
           <span className={'header-discount__text'}>
             Khuyen mai
           </span>
-        </Link>
+        </NavLink>
       </div>
     </> :
     <div className='header-menu'>
@@ -60,24 +69,24 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
       >
       <div className='header-menu-dropdown'>
         <div className={'header-menu-dropdown-explore'}>
-          <Link to={'/explore'} >
+          <NavLink to={'/explore'} style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
             <span className={'header-menu-dropdown-explore__icon'}>
               <ICON.FaSlackHash size={18}/>
             </span>
             <span className={'header-menu-dropdown-explore__text'}>
               Kham pha
             </span>
-          </Link>
+          </NavLink>
         </div>
         <div className={'header-menu-dropdown-discount'}>
-          <Link to={'/discount'} >
+          <NavLink to={'/discount'} style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
             <span className={'header-menu-dropdown-discount__icon'}>
               <ICON.TbDiscount2 size={18}/>
             </span>
             <span className={'header-menu-dropdown-discount__text'}>
               Khuyen mai
             </span>
-          </Link>
+          </NavLink>
         </div>
       </div>
       </CSSTransition>
