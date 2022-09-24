@@ -6,6 +6,7 @@ import image from '../assets/suggest-place.svg'
 import '../styles/home-banner.scss';
 import { Button } from './common';
 import {useScrollPostion} from '../hooks';
+import { useNavigate } from 'react-router-dom';
 
 const card = [{
   children: <h1>Lam viec</h1>,
@@ -97,6 +98,11 @@ const card2 = [{
 
 type Props = {}
 export function Home({ }: Props) {
+  const nav = useNavigate();
+  const redrictAddplace = () => {
+    nav('/add-place')
+  }
+
   return (
     <div className='home-section'>
       <BannerHome />
@@ -106,7 +112,7 @@ export function Home({ }: Props) {
       <div className='home-section-suggest-place'>
         <img className='home-section-suggest-place__img' src={image} alt='suggest place' />
         <span className='home-section-suggest-place__text' >Chung toi co bo lo dia diem nao ma ban biet</span>
-        <Button className={'home-section-suggest-place__button-suggest-palace'} type={2} bg={1} children={<>Dong Gop Dia Diem</>} ></Button>
+        <Button onClick = {()=>redrictAddplace()} className={'home-section-suggest-place__button-suggest-palace'} type={2} bg={1} children={<>Dong Gop Dia Diem</>} ></Button>
       </div>
     </div>
   )
