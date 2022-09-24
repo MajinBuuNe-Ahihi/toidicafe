@@ -53,7 +53,7 @@ export default function SideBar({ }: Props) {
         <div className='sidebar-navigation-menu'>
           {
             false && sidebarNav.map((element: Nav,index) => element.type === 1 &&
-            <Link key={index} to={element.link} className='sidebar-navigation-menu-element'>
+            <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar-navigation-menu-element'>
             <span className='sidebar-navigation-menu-element__icon'>
               {element.icon}
             </span>
@@ -66,7 +66,7 @@ export default function SideBar({ }: Props) {
           </h3>
            {
             sidebarNav.map((element: Nav,index) => element.type === 2 &&
-            <Link key={index}  to={element.link} className='sidebar-navigation-menu-element'>
+              <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar-navigation-menu-element'>
             <span className='sidebar-navigation-menu-element__icon'>
               {element.icon}
             </span>
@@ -77,7 +77,7 @@ export default function SideBar({ }: Props) {
           <h3 className='sidebar-navigation-menu__name-section'>Thong tin</h3>
            {
             sidebarNav.map((element: Nav,index) => element.type === 3 &&
-            <Link key={index} to={element.link} className='sidebar-navigation-menu-element'>
+            <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar-navigation-menu-element'>
             <span className='sidebar-navigation-menu-element__icon'>
               {element.icon}
             </span>

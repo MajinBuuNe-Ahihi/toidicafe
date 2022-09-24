@@ -78,8 +78,11 @@ hr {
 }
 
 @media screen and (max-width: 990px) {
-.add-place-container {
-  padding: 10px;
-  border-radius: 0px;
+  .add-place-wrapper {
+    margin-bottom: 80px;
   }
+  .add-place-container {
+    padding: 10px;
+    border-radius: 0px;
+    }
 }
