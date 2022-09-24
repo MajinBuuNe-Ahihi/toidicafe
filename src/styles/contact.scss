@@ -1,0 +1,129 @@
+@import './varible';
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 30px 0;
+  position: relative;
+  background: $liner-gradient;
+}
+
+.contact-heading {
+  grid-area: h;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.contact-heading__title {
+  font-size: 30px;
+  font-family: $font-family-heading;
+}
+
+.contact-heading__text {
+  font-size: 18px;
+  line-height: 130%;
+
+}
+
+.contact-form {
+  grid-area: f;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.contact-form__label {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.contact-form__input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  background-color: $color-button-1;
+  &.error {
+    border: $secondary-color 1px solid;
+  }
+}
+
+.contact-form__message {
+  text-transform: lowercase;
+  color: $secondary-color;
+  font-size: 12px;
+}
+
+.contact-form__textarea {
+  width: 100%;
+  height: 110px;
+  padding: 20px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: $color-button-1;
+  overflow-y: scroll;
+  &.error {
+      border: $secondary-color 1px solid;
+  }
+}
+
+.contact-form__button { 
+  background-color: $secondary-color;
+  color: $primary-color;
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-top: 20px;
+  &:hover {
+    background-color: $secondary-color-hover;
+  }
+}
+
+.contact-image {
+  grid-area: i;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-self: flex-end;
+  margin-left: 20px;
+}
+
+.contact-contain {
+  display: grid;
+  grid-template-areas: 'h ...'
+                       'f i';
+  grid-template-columns: 65% 35%;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: $shadow-primary-card;
+  max-width: 1200px;
+  gap: 10px;
+  background: $primary-color;
+}
+
+@media screen and (max-width: 990px) {
+  .contact-contain {
+    display: grid;
+    grid-template-areas: 'h '
+      'f';
+    grid-template-columns: 1fr;
+    padding: 30px 40px;
+    margin-bottom: 80px;
+  }
+  .contact-image {
+    display: none;
+  }
+}

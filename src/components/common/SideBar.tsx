@@ -21,9 +21,9 @@ let sidebarNav: Nav[] = [{ icon: <ICON.FaUserEdit size={25} />, name: 'chinh sua
   { icon: <ICON.AiTwotoneFire size={25} />, name: 'kham pha', link: '/', type: 2 },
   { icon: <ICON.TbDiscount2 size={25} />, name: 'khuyen mai', link: '/promo', type: 2 },
   { icon: <ICON.HiLocationMarker size={25} />, name: 'dia diem moi', link: '/add-place', type: 2 },
-  { icon: <ICON.HiOutlineInformationCircle size={25} />, name: 'gioi thieu', link: '/', type: 3 },
+  { icon: <ICON.HiOutlineInformationCircle size={25} />, name: 'gioi thieu', link: '/about', type: 3 },
   { icon: <ICON.BiCheckShield size={25} />, name: 'chinh sach va ho tro', link: '/', type: 3 },
-  { icon: <ICON.HiOutlineMail size={25} />, name: 'lien he - gop y', link: '/', type: 3 }  
+  { icon: <ICON.HiOutlineMail size={25} />, name: 'lien he - gop y', link: '/contact', type: 3 }  
 ]
 
 export default function SideBar({ }: Props) {

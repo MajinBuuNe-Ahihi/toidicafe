@@ -36,13 +36,13 @@ export function Footer({ }: Props) {
             </h3>
             <ul className='footer-top__footer-list-information'>
               <li className='footer-top__footer-list-information__element'>
-                <Link to={'/'}>Gioi thieu</Link>
+                <Link to={'/about'}>Gioi thieu</Link>
                </li>
               <li className='footer-top__footer-list-information__element'>
                 <Link to={'/'}>Giai dap thac mac</Link>
                </li>
               <li className='footer-top__footer-list-information__element'>
-                <Link to={'/'}>Lien he - gop y</Link>
+                <Link to={'/contact'}>Lien he - gop y</Link>
                </li>
               <li className='footer-top__footer-list-information__element'>
                 <Link to={'/'}>Dieu khoan su dung</Link>
