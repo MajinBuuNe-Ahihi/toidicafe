@@ -77,6 +77,16 @@ hr {
   text-transform: capitalize;
 }
 
+.form-add-place {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+
+
 @media screen and (max-width: 990px) {
   .add-place-wrapper {
     margin-bottom: 80px;

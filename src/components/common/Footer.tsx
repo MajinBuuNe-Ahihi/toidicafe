@@ -24,7 +24,7 @@ export function Footer({ }: Props) {
                <img src={logo} alt='toificafe' className='footer-top__footer-logo__image' />
             </div>
             <div className='footer-top__footer-partner'>
-              <Link to = {'contact'} className='footer-top-footer-partner-button'>
+              <Link to = {'/contact'} className='footer-top-footer-partner-button'>
                 <img src={partnericon} alt='tro thanh doi tac' />
                 <span>Hop tac voi chung toi</span>
               </Link>

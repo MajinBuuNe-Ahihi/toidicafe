@@ -69,6 +69,10 @@
   border: 3px solid $primary-color;
   color: $secondary-color-label;
   border-radius: 5px;
+  &:hover {
+    color: $secondary-color;
+    border-color: $secondary-color;
+  }
 }
 
 .footer-top__footer-following-us,
