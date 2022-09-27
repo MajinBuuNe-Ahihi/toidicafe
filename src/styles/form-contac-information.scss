@@ -32,12 +32,10 @@
   grid-area: i;
   display: flex;
   width: 100%;
-  margin-bottom: 5px;
   height: 40px;
   border-radius: 10px;
   outline: none;
   border: 1px solid rgba(133, 127, 127, 0.678);
-  margin-top: 20px;
   padding: 0 10px;
   &.error {
     border: 1px solid $secondary-color;
@@ -60,11 +58,7 @@
                          'i'
                          'm';
     grid-template-columns: 1fr;
+    gap: 10px;
   }
-  .form-input-contac-info{
-    margin-top: 10px;
-  }
-  .form-error-message-contac-info {
-    margin: 2px 0 5px;
-  }
+
 }
