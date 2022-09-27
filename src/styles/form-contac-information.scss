@@ -51,14 +51,17 @@
 
 @media screen and (max-width: 990px) {
   .form-contac-information-wrapper {
-    padding: 30px 20px;
+    padding: 0px 20px 30px;
+    gap: 0px;
   }
   .form-contac-information-row {
     grid-template-areas: 'l'
                          'i'
                          'm';
     grid-template-columns: 1fr;
-    gap: 10px;
+    margin-top: 10px;
   }
-
+  .form-input-contac-info {
+    margin: 10px 0px 5px;
+  }
 }
