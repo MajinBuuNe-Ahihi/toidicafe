@@ -1,0 +1,144 @@
+@import './varible';
+
+.form-label-1 {
+ grid-area: l1;
+}
+.form-label-2 {
+  grid-area: l2;
+}
+.form-label-3 {
+  grid-area: l3;
+}
+.form-label-4 {
+  grid-area: l4;
+}
+.form-label-5 {
+  grid-area: l5;
+}
+.form-label-6 {
+  grid-area: l6;
+}
+
+.form-input-1 {
+  grid-area: i1;
+}
+.form-input-2 {
+  grid-area: i2;
+}
+.form-input-3 {
+  grid-area: i3;
+}
+.form-input-4 {
+  grid-area: i4;
+}
+.form-input-5 {
+  grid-area: i5;
+}
+.form-input-6 {
+  grid-area: i6;
+}
+
+
+.form-error-message-1 {
+  grid-area: m1;
+}
+.form-error-message-2 {
+  grid-area: m2;
+}
+.form-error-message-3 {
+  grid-area: m3;
+}
+.form-error-message-4 {
+  grid-area: m4;
+}
+.form-error-message-5 {
+  grid-area: m5;
+}
+
+.form-information-basic-container {
+  display: grid;
+  grid-template-areas:'l1 i1'
+                      'l1 m1'
+                      'l2 i2'
+                      'l2 m2'
+                      'l3 i3'
+                      'l3 m3'
+                      'l4 i4'
+                      'l4 m4'
+                      'l5 i5'
+                      'l5 m5'
+                      'l6 i6'
+                      'l6 ...' ;
+  grid-template-columns: 3fr  7fr;
+  width: 100%;
+  padding: 0 0 30px;
+}
+
+.form-label{
+  display: flex;
+  min-width: 100%;
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+  span {
+    color: $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-bottom: -5px;
+  }
+  
+}
+
+.form-input{
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgba(133, 127, 127, 0.678);
+  margin-top: 20px;
+  padding: 0 10px ;
+  &.error {
+    border: 1px solid $secondary-color;
+  }
+} 
+
+.form-error-message {
+  font-size: 13px;
+  color: $secondary-color;
+  text-transform: lowercase;
+}
+
+.form-input-textarea {
+  height: 80px;
+  padding: 10px;  
+}
+
+.form-input-6 {
+  margin-top: 20px;
+}
+
+.form-label-6 {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 990px) {
+  .form-information-basic-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 20px 30px;
+  }
+  .form-input {
+    margin-top: 10px;
+  }
+  .form-error-message {
+    margin:2px 0 5px;
+  }
+}

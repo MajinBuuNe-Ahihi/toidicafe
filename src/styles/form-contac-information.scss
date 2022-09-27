@@ -1,0 +1,70 @@
+@import './varible';
+
+.form-contac-information-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-self: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.form-contac-information-row {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: 'l i'
+                       'l m';
+  width: 100%;
+
+}
+
+.form-label-contac-info {
+  grid-area: l;
+  display: flex;
+  min-width: 100%;
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+}
+
+.form-input-contac-info {
+  grid-area: i;
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgba(133, 127, 127, 0.678);
+  margin-top: 20px;
+  padding: 0 10px;
+  &.error {
+    border: 1px solid $secondary-color;
+  }
+}
+
+.form-error-message-contac-info {
+  grid-area: m;
+  font-size: 13px;
+  color: $secondary-color;
+  text-transform: lowercase;
+}
+
+@media screen and (max-width: 990px) {
+  .form-contac-information-wrapper {
+    padding: 30px 20px;
+  }
+  .form-contac-information-row {
+    grid-template-areas: 'l'
+                         'i'
+                         'm';
+    grid-template-columns: 1fr;
+  }
+  .form-input-contac-info{
+    margin-top: 10px;
+  }
+  .form-error-message-contac-info {
+    margin: 2px 0 5px;
+  }
+}

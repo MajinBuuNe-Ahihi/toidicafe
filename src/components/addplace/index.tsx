@@ -5,22 +5,22 @@ import '../../styles/add-place.scss'
 import { Formik,Form,Field} from 'formik'
 import * as Yup from 'yup'
 import FormInfomationBasic from './FormInfomationBasic'
+import FormContactInformation from './FormContactInformation'
 type Props = {}
 const SignupSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  lastName: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
+  name: Yup.string().required('Required'),
+  area: Yup.string().required('Required'),
+  address: Yup.string().required('Required'),
+  direct: Yup.string(),
+  info: Yup.string(),
+  owner: Yup.string(),
+  phone: Yup.string().min(10, 'invalid numberphone'),
+  email: Yup.string().email('invalid email'),
  });
 export function AddPlace({ }: Props) {
   
   const showToast = () => {
-    toast.error('🦄 Wow so easy!', {
+    toast.success('🦄 Wow so easy!', {
     position: 'top-center',
     autoClose: 5000,
     hideProgressBar: false,
@@ -45,29 +45,39 @@ export function AddPlace({ }: Props) {
         <Formik
         initialValues={{
           name: '',
-          lastName: '',
+          area: '',
+          address: '',
+          direct: '',
+          info: '',
+          owner: 'false',
+          phone: '',
           email: '',
+          facebook_url: '',
+          instagram_url: '',
+          website: ''
         }}
         validationSchema={SignupSchema}
         onSubmit={values => {
           // same shape as initial values
-          console.log(values);
+          console.log(values, Boolean(values.owner));
+          showToast()
         }}
         >
-          {({ errors, touched }) => (
+          {({ errors, touched,handleChange}) => (
             <Form className='form-add-place'>
             <div className='add-place-name-section'>Thông tin cơ bản</div>
             <hr /> 
-              <FormInfomationBasic errors={errors} touched={touched} />
+              <FormInfomationBasic  handleChange={handleChange} errors={errors} touched={touched} />
             <div className='add-place-name-section'>Thông tin khác</div>
             <hr />
             <div className='add-place-name-section'>Thông tin liên hệ</div>
-            <hr />
+              <hr />
+              <FormContactInformation errors={errors} touched={touched} />
             <div className='add-place-name-section'>Hình ảnh</div>
             <hr />
             <div className='add-place-name-section'>Menu</div>
             <hr />
-            <Button onClick={()=>showToast()} className='add-place-button' type={2} bg={1} children={<span className='add-place-button-container'>
+            <Button typefunc={{type:'submit'}} className='add-place-button' type={2} bg={1} children={<span className='add-place-button-container'>
               <AiOutlinePlus size={25} />
               <span>
                 Them dia chi
