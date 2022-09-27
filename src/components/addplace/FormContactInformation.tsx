@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, FormikErrors, FormikTouched } from 'formik'
-import '../../styles/form-contac-information.scss'
+import '../../styles/form-contact-information.scss'
 
 type Props = {
   errors: FormikErrors<{
@@ -19,19 +19,19 @@ let arrField = [{ name: 'phone', label: 'Điện thoại', placeholder: 'Nhap so
   { name: 'instagram_url', label: 'Instagram', placeholder: 'Nhap link instagram' },
   { name: 'website', label:'Website',placeholder: 'Nhap link website'}]
 
-export default function FormContactInformation({errors,touched }: Props) {
+export default function FormcontacttInformation({errors,touched }: Props) {
   return (
-    <div className='form-contac-information-wrapper'>
+    <div className='form-contact-information-wrapper'>
       {
         arrField.map(({ name, placeholder, label }, index) => 
         { let wrong = (name == 'email' || name == 'phone') && errors[`${name == 'email' ? 'email' : 'phone'}`] &&
           touched[`${name == 'email' ? 'email' : 'phone'}`] 
           return (
-          <div className='form-contac-information-row' key={index}>{}
-          <label className= {'form-label-contac-info'} htmlFor={name}>{label}:</label>
-          <Field className={'form-input-contac-info'.concat(wrong?' error':'')} name={name} placeholder={placeholder} />
+          <div className='form-contact-information-row' key={index}>
+          <label className= {'form-label-contact-info'} htmlFor={name}>{label}:</label>
+          <Field className={'form-input-contact-info'.concat(wrong?' error':'')} name={name} placeholder={placeholder} />
           { wrong &&
-          <span className={'form-error-message-contac-info'}>{errors[`${name == 'email' ? 'email' : 'phone'}`]}</span>}
+          <span className={'form-error-message-contact-info'}>{errors[`${name == 'email' ? 'email' : 'phone'}`]}</span>}
           </div>
           )
         }

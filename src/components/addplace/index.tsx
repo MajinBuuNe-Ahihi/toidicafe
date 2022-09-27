@@ -1,11 +1,11 @@
-import React from 'react'
+import { Form, Formik } from 'formik'
 import { toast } from 'react-toastify'
-import { Button,AiOutlinePlus } from '../common'
-import '../../styles/add-place.scss'
-import { Formik,Form,Field} from 'formik'
 import * as Yup from 'yup'
-import FormInfomationBasic from './FormInfomationBasic'
+import '../../styles/add-place.scss'
+import { AiOutlinePlus, Button } from '../common'
 import FormContactInformation from './FormContactInformation'
+import FormInfomationBasic from './FormInfomationBasic'
+
 type Props = {}
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required('Required'),

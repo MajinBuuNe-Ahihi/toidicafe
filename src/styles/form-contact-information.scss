@@ -1,6 +1,6 @@
 @import './varible';
 
-.form-contac-information-wrapper {
+.form-contact-information-wrapper {
   display: flex;
   align-items: flex-start;
   justify-self: center;
@@ -10,7 +10,7 @@
   padding: 20px 0;
 }
 
-.form-contac-information-row {
+.form-contact-information-row {
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-areas: 'l i'
@@ -19,7 +19,7 @@
 
 }
 
-.form-label-contac-info {
+.form-label-contact-info {
   grid-area: l;
   display: flex;
   min-width: 100%;
@@ -28,7 +28,7 @@
   font-weight: bold;
 }
 
-.form-input-contac-info {
+.form-input-contact-info {
   grid-area: i;
   display: flex;
   width: 100%;
@@ -42,7 +42,7 @@
   }
 }
 
-.form-error-message-contac-info {
+.form-error-message-contact-info {
   grid-area: m;
   font-size: 13px;
   color: $secondary-color;
@@ -50,18 +50,18 @@
 }
 
 @media screen and (max-width: 990px) {
-  .form-contac-information-wrapper {
+  .form-contact-information-wrapper {
     padding: 0px 20px 30px;
     gap: 0px;
   }
-  .form-contac-information-row {
+  .form-contact-information-row {
     grid-template-areas: 'l'
                          'i'
                          'm';
     grid-template-columns: 1fr;
     margin-top: 10px;
   }
-  .form-input-contac-info {
+  .form-input-contact-info {
     margin: 10px 0px 5px;
   }
 }
