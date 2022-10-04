@@ -10,26 +10,23 @@
 }
 
 .form-contact-information-row {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-areas: 'l i'
-                       'l m';
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   margin-bottom: 20px;
 
 }
 
 .form-label-contact-info {
-  grid-area: l;
   display: flex;
-  min-width: 100%;
-  align-items: center;
   height: 100%;
+  width: 30%;
+  align-items: center;
   font-weight: bold;
 }
 
 .form-input-contact-info {
-  grid-area: i;
   display: flex;
   width: 100%;
   height: 40px;
@@ -43,10 +40,19 @@
 }
 
 .form-error-message-contact-info {
-  grid-area: m;
   font-size: 13px;
   color: $secondary-color;
   text-transform: lowercase;
+}
+
+.form-contact-container-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 70%;
+  gap: 5px;
 }
 
 @media screen and (max-width: 990px) {
@@ -55,13 +61,21 @@
     gap: 0px;
   }
   .form-contact-information-row {
-    grid-template-areas: 'l'
-                         'i'
-                         'm';
-    grid-template-columns: 1fr;
-    margin-top: 10px;
+    flex-direction: column;
+    gap: 5px;
+    align-content: flex-start;
+    margin: 0;
+  }
+  .form-label-contact-info {
+    height: 100%;
+    width: 100%;
+    justify-self: flex-start;
   }
   .form-input-contact-info {
     margin: 10px 0px 5px;
+
+  }
+  .form-contact-container-input {
+    width: 100%;
   }
 }
