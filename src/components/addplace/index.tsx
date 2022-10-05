@@ -5,6 +5,7 @@ import '../../styles/add-place.scss'
 import { AiOutlinePlus, Button } from '../common'
 import FormContactInformation from './FormContactInformation'
 import FormInfomationBasic from './FormInfomationBasic'
+import FormOtherInformation from './FormOtherInformation'
 
 type Props = {}
 const SignupSchema = Yup.object().shape({
@@ -16,6 +17,8 @@ const SignupSchema = Yup.object().shape({
   owner: Yup.string(),
   phone: Yup.string().min(10, 'invalid numberphone'),
   email: Yup.string().email('invalid email'),
+  time_open: Yup.string().matches(/([0-1][0-9]|[2][0-3]):[0-5][0-9]/, "invalid format time"),
+  time_closed: Yup.string().matches(/([0-1][0-9]|[2][0-3]):[0-5][0-9]/, "invalid format time")
  });
 export function AddPlace({ }: Props) {
   
@@ -54,7 +57,16 @@ export function AddPlace({ }: Props) {
           email: '',
           facebook_url: '',
           instagram_url: '',
-          website: ''
+          website: '',
+          time_open: '07:00',
+          time_closed: '23:00',
+          min_cost: 10000,
+          max_cost: 100000,
+          wifi: '',
+          pass_wifi: '',
+          style_shop: [],
+          convenient:[]
+          
         }}
         validationSchema={SignupSchema}
         onSubmit={values => {
@@ -69,7 +81,8 @@ export function AddPlace({ }: Props) {
             <hr /> 
               <FormInfomationBasic  handleChange={handleChange} errors={errors} touched={touched} />
             <div className='add-place-name-section'>Thông tin khác</div>
-            <hr />
+              <hr />
+            <FormOtherInformation errors={errors} touched={touched}/>
             <div className='add-place-name-section'>Thông tin liên hệ</div>
               <hr />
               <FormContactInformation errors={errors} touched={touched} />

@@ -97,15 +97,19 @@
 }
 
 .header-button-write-preview-container {
-  color: $secondary-color-label;
   transition: 0.5s linear all;
-  &:hover {
-    color: $secondary-color-label;
-  }
   span {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  button {
+    color: $secondary-color-label;
+  }
+  &:hover {
+    button {
+      color: $secondary-color-label;
+    }
   }
 }
 

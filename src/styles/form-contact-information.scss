@@ -37,6 +37,12 @@
   &.error {
     border: 1px solid $secondary-color;
   }
+  &:hover {
+    border: 1px $secondary-color solid;
+  }
+  &:focus {
+    box-shadow: 0px 0px 3px $secondary-color;
+  }
 }
 
 .form-error-message-contact-info {

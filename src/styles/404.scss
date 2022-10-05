@@ -37,6 +37,9 @@
   color: $secondary-color-label;
   width: 200px;
   height: 50px;
+  button {
+    color: $secondary-color-label;
+  }
 }
 
 @media screen and (max-width: 990px) {
