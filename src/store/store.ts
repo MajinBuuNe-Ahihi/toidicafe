@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
+import previewImageSlice from '../sliceredux/preview-image.slice'
 import triggerOverlaySlice from '../sliceredux/trigger.overlay.slice'
 // ...
 
 export const store = configureStore({
   reducer: {
-    trigger:  triggerOverlaySlice
+    trigger: triggerOverlaySlice,
+    previewimagemodal: previewImageSlice
   },
 })
 

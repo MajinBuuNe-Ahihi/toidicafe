@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react'
 import  ReactDOM  from 'react-dom'
 import { ToastContainer } from 'react-toastify'
-import { ButtonScroll, Overlay } from './components/common'
+import { ButtonScroll, Overlay,PreviewImage} from './components/common'
 import { RouterMain } from './router'
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     <div className="App">
       <RouterMain></RouterMain>
       {ReactDOM.createPortal(<Overlay />, document.getElementById('overlay') as HTMLElement)}
+      {ReactDOM.createPortal(<PreviewImage />, document.getElementById('preview') as HTMLElement)}
       {ReactDOM.createPortal(<ButtonScroll />, document.getElementById('button-scroll') as HTMLElement)}
       {ReactDOM.createPortal(toast,document.getElementById('toastify') as HTMLElement)}
     </div>

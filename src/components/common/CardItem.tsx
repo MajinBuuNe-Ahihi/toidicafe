@@ -18,7 +18,6 @@ type Props = {
 export  function CardItem({ image, children,type }: Props) {
   const [opacity,setOpacity] = useState<number>(0)
   return (
-    
     <Link to={'/'} className={`card-item-component card-item-component--${type}`}>
       <LazyLoadImage className={`card-item-component-image card-item-component-image--${type}`}
         alt={image.alt}

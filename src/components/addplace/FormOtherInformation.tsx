@@ -1,6 +1,7 @@
 import { Field, FormikErrors, FormikTouched } from 'formik'
 import React from 'react'
 import '../../styles/form-other-information.scss'
+import { v4 as uuidv4 } from 'uuid';
 
 type Props = {
   errors: FormikErrors<{
@@ -95,7 +96,7 @@ export default function FormOtherInformation({errors,touched}: Props) {
         <label className="form-other-information__label" > Tien ich</label>
         <div className="form-other-information__input-contain">
           {
-            convenient.map((item:{value:string,name:string},index:number)=><label className='form-other-information_checkbox'>
+            convenient.map((item:{value:string,name:string},index:number)=><label key={uuidv4()} className='form-other-information_checkbox'>
               <Field key={index} type="checkbox" name="convenient" value={item.value} />
               <span className="checkmark"></span>
               {item.name}

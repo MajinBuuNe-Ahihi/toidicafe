@@ -2,7 +2,7 @@ import { Form, Formik } from 'formik'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import '../../styles/add-place.scss'
-import { AiOutlinePlus, Button } from '../common'
+import { AiOutlinePlus, Button, HandleUpload  } from '../common'
 import FormContactInformation from './FormContactInformation'
 import FormInfomationBasic from './FormInfomationBasic'
 import FormOtherInformation from './FormOtherInformation'
@@ -87,9 +87,11 @@ export function AddPlace({ }: Props) {
               <hr />
               <FormContactInformation errors={errors} touched={touched} />
             <div className='add-place-name-section'>Hình ảnh</div>
-            <hr />
+              <hr />
+              <HandleUpload></HandleUpload>
             <div className='add-place-name-section'>Menu</div>
-            <hr />
+              <hr />
+              <HandleUpload></HandleUpload>
             <Button typefunc={{type:'submit'}} className='add-place-button' type={2} bg={1} children={<span className='add-place-button-container'>
               <AiOutlinePlus size={25} />
               <span>
