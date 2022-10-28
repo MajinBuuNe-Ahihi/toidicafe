@@ -11,6 +11,9 @@
   width: 100%;
   flex-wrap: wrap;
   gap: 16px;
+  @include mobile() {
+    padding: 0 26px;
+  }
  
 }
 
@@ -89,4 +92,7 @@
   margin-top: 10px;
   color: $secondary-color;
   margin-bottom: 20px;
+  @include mobile() {
+    padding: 0 26px;
+  }
 }

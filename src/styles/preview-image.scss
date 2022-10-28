@@ -35,7 +35,7 @@
   align-items: center;
   @include mobile() {
     height: 30px;
-    padding: 20px;
+    padding-bottom: 20px;
   }
 }
 
