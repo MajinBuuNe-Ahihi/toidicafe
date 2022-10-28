@@ -13,7 +13,7 @@
   box-shadow: $shadow-primary-card;
 }
 
-.header-container {
+.header__container {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -23,7 +23,7 @@
   gap: 20px;
 }
 
-.header-container__left {
+.header__container-left {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -32,7 +32,7 @@
   height: 100%;
 }
 
-.header-logo {
+.header__logo {
   height: 100%;
   width: 200px;
   display: flex;
@@ -41,11 +41,11 @@
 
 }
 
-.header-logo__image {
+.header__logo-image {
   height: 60px;
 }
 
-.header-container__right {
+.header__container-right {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -53,21 +53,21 @@
   flex: 1;
 }
 
-.header-container-right-1,
-.header-container-right-2 {
+.header__container-right-1,
+.header__container-right-2 {
   display: flex;
   justify-content: flex-start;
   gap: 20px;
   align-items: center;
   flex: 1;
 }
-.header-container-right-2 {
+.header__container-right-2 {
   justify-content: flex-end;
   flex: none;
 }
 
 .header-explore,
-.header-discount {
+.header__discount {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,13 +90,13 @@
 }
 
 .header-explore__icon,
-.header-discount__icon {
+.header__discount-icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header-button-write-preview-container {
+.header__button-write-preview-container {
   transition: 0.5s linear all;
   span {
     display: flex;
@@ -113,11 +113,11 @@
   }
 }
 
-.header-login {
+.header__login {
 
 }
 
-.header-login-button {
+.header__login-button {
   color: $secondary-color;
   transition: 0.5s linear all;
   &:hover {
@@ -125,9 +125,9 @@
   }
 }
 
-.header-search-button,
-.header-near-place-button,
-.header-more-feature-button {
+.header__search-button,
+.header__near-place,
+.header__more-feature {
   color:$secondary-color ;
   height: 50px;
   width: 50px;
@@ -143,7 +143,7 @@
   }
 }
 
-.header-near-place-button {
+.header__near-place {
   a {
     color: $secondary-color ;
     display: flex;
@@ -172,7 +172,7 @@
   
 }
 
-.header-feature-loggined {
+.header__feature-loggined {
   display: flex;
   align-items: center;
   height: 100%;
@@ -180,7 +180,7 @@
   gap:14px;
 }
 
-.header-location-saved-button {
+.header__location-saved {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -200,7 +200,7 @@
   }
 }
 
-.header-location-saved-button__image {
+.header__location-saved-image {
   height: 20px;
   width: 20px;
 }
@@ -233,7 +233,7 @@
   }
 }
 
-.header-menu {
+.header__menu {
   height: 40px;
   width: 40px;
   display: flex;
@@ -242,7 +242,7 @@
   position: relative;
 }
 
-.header-menu-button {
+.header__menu-button {
   height: 100%;
   width: 100%;
   display: flex;
@@ -255,12 +255,12 @@
   }
 }
 
-.header-menu-button__image {
+.header__menu-button-image {
   height: 20px;
   width: 20px;
 }
 
-.header-menu-dropdown {
+.header__menu-dropdown {
  position: absolute;
  right: 0;
  top: 50px;
@@ -274,8 +274,8 @@
  z-index: 99;
 }
 
-.header-menu-dropdown-discount,
-.header-menu-dropdown-explore {
+.header__menu-dropdown-discount,
+.header__menu-dropdown-explore {
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -296,37 +296,37 @@
   }
 }
 
-.header-menu-dropdown-discount__icon,
-.header-menu-dropdown-explore__icon {
+.header__menu-dropdown-discount-icon,
+.header__menu-dropdown-explore-icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header-menu-dropdown-discount__text,
-.header-menu-dropdown-explore__text {
+.header__menu-dropdown-discount-text,
+.header__menu-dropdown-explore-text {
 
 }
 
 @media screen and (max-width: 990px) {
-  .header-container {
+  .header__container {
       padding: 6px;
   }
-  .header-logo {
+  .header__logo {
     width: 150px;
   }
-  .header-logo__image{
+  .header__logo-image{
     width: 100%;
   }
   .header-explore,
-  .header-discount,
-  .header-button-write-preview,
-  .header-login {
+  .header__discount,
+  .header__button-write-preview,
+  .header__login {
     display: none;
   }
-  .header-search-button,
-  .header-near-place-button,
-  .header-more-feature-button {
+  .header__search-button,
+  .header__near-place,
+  .header__more-feature {
     display: flex;
   }
 }

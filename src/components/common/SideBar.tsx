@@ -30,66 +30,66 @@ export default function SideBar({ }: Props) {
   const dispatch = useAppDispatch ()
 
   return (
-    <div className='sidebar-component'>
-      <div className='sidebar-container'>
+    <div className='sidebar__component'>
+      <div className='sidebar__container'>
         { true?
-          <Link to = {'/account'} className='sidebar-profile-user' onClick={()=>dispatch(overlay())}>
-            <img src={user} alt='' className='sidebar-profile-user__image' />
-            <span className='sider-bar-profile-user-info'>
-              <span className='sidebar-profile-user-info__name'>
+          <Link to = {'/account'} className='sidebar__profile-user' onClick={()=>dispatch(overlay())}>
+            <img src={user} alt='' className='sidebar__user-image' />
+            <span className='siderbar__user-info'>
+              <span className='siderbar__user-name'>
                 Hoang Van Manh
               </span>
-              <img src={level} alt='' className='sidebar-profile-user-info__level' />
+              <img src={level} alt='' className='siderbar__user-level' />
             </span>
           </Link> : 
-          <div className='sider-bar-button-signin-signup'>
+          <div className='siderbar__login'>
             <Button type={2} bg={1}>
-            <span className='sigin-sigup-button'>
+            <span className='siderbar__login-button'>
                 Dang Nhap/ Dang ky
             </span>
           </Button>
           </div>
         }
-        <div className='sidebar-navigation-menu'>
+        <div className='sidebar__menu'>
           {
             false && sidebarNav.map((element: Nav,index) => element.type === 1 &&
-            <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar-navigation-menu-element'>
-            <span className='sidebar-navigation-menu-element__icon'>
+            <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar__menu-element'>
+            <span className='sidebar__menu-icon'>
               {element.icon}
             </span>
-            <span className='side-navigation-menu-element__name'>{element.name}</span>
+            <span className='sidebar__menu-name'>{element.name}</span>
             </Link>
             )
           }
-          <h3 className='sidebar-navigation-menu__name-section'>
+          <h3 className='sidebar__menu-section'>
             Toi di cafe
           </h3>
            {
             sidebarNav.map((element: Nav,index) => element.type === 2 &&
-              <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar-navigation-menu-element'>
-            <span className='sidebar-navigation-menu-element__icon'>
+              <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar__menu-element'>
+            <span className='sidebar__menu-icon'>
               {element.icon}
             </span>
-            <span className='side-navigation-menu-element__name'>{element.name}</span>
+            <span className='sidebar__menu-name'>{element.name}</span>
             </Link>
             )
           }
-          <h3 className='sidebar-navigation-menu__name-section'>Thong tin</h3>
+          <h3 className='sidebar__menu-section'>Thong tin</h3>
            {
             sidebarNav.map((element: Nav,index) => element.type === 3 &&
-            <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar-navigation-menu-element'>
-            <span className='sidebar-navigation-menu-element__icon'>
+            <Link key={index} to={element.link} onClick={() => dispatch(overlay())} className='sidebar__menu-element'>
+            <span className='sidebar__menu-icon'>
               {element.icon}
             </span>
-            <span className='side-navigation-menu-element__name'>{element.name}</span>
+            <span className='sidebar__menu-name'>{element.name}</span>
             </Link>
             )
           }
-          <h3 className='sidebar-navigation-menu__name-section'>theo doi chung toi</h3>
-          <ul className='sidebar-navigation-menu-list-following-social'>
+          <h3 className='sidebar__menu-section'>theo doi chung toi</h3>
+          <ul className='sidebar__list-follow-social'>
             <Social/>
           </ul>
-          <Button type={2} bg={2}><span className='logout-button'>Dang xuat</span></Button>
+          <Button type={2} bg={2}><span className='sidebar__logout'>Dang xuat</span></Button>
         </div>
       </div>
     </div>

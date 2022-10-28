@@ -46,20 +46,20 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
         </span>
         </NavLink>
       </div>
-      <div className={'header-discount'}>
+      <div className={'header__discount'}>
         <NavLink to={'/promo'} style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
-          <span className={'header-discount__icon'}>
+          <span className={'header__discount-icon'}>
             <ICON.TbDiscount2 size={25}/>
           </span>
-          <span className={'header-discount__text'}>
+          <span className={'header__discount-text'}>
             Khuyen mai
           </span>
         </NavLink>
       </div>
     </> :
-    <div className='header-menu'>
-      <div className='header-menu-button' onClick={() => openDropDown()}>
-        <img src={menu} alt='' className='header-menu-button__image' />
+    <div className='header__menu'>
+      <div className='header__menu-button' onClick={() => openDropDown()}>
+        <img src={menu} alt='' className='header__menu-button-image' />
       </div> 
       <CSSTransition
         in={open && trigger == 1}
@@ -67,31 +67,29 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
         unmountOnExit
         classNames='modal-dropdown'
       >
-      <div className='header-menu-dropdown'>
-        <div className={'header-menu-dropdown-explore'}>
+      <div className='header__menu-dropdown'>
+        <div className={'header__menu-dropdown-explore'}>
           <NavLink to={'/explore'} style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
-            <span className={'header-menu-dropdown-explore__icon'}>
+            <span className={'header__menu-dropdown-explore-icon'}>
               <ICON.FaSlackHash size={18}/>
             </span>
-            <span className={'header-menu-dropdown-explore__text'}>
+            <span className={'header__menu-dropdown-explore-text'}>
               Kham pha
             </span>
           </NavLink>
         </div>
-        <div className={'header-menu-dropdown-discount'}>
+        <div className={'header__menu-dropdown-discount'}>
           <NavLink to={'/discount'} style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
-            <span className={'header-menu-dropdown-discount__icon'}>
+            <span className={'header__menu-dropdown-discount-icon'}>
               <ICON.TbDiscount2 size={18}/>
             </span>
-            <span className={'header-menu-dropdown-discount__text'}>
+            <span className={'header__menu-dropdown-discount-text'}>
               Khuyen mai
             </span>
           </NavLink>
         </div>
       </div>
       </CSSTransition>
-
-          
     </div>    
         
     }

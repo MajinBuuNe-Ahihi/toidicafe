@@ -15,8 +15,8 @@ export const NavigationMobile = (props: Props) => {
   }
   return (
     <div className='navigation-mobile'>
-      <ul className='navigation-mobile-container'>
-        <li className='navigation-mobile-element'>
+      <ul className='navigation-mobile__container'>
+        <li className='navigation-mobile__element'>
           <NavLink to={'/'}
             style = {({isActive}) => isActive?activeStyle : unActiveStyle}
           >
@@ -28,7 +28,7 @@ export const NavigationMobile = (props: Props) => {
             </span>
           </NavLink>
         </li>
-        <li className='navigation-mobile-element'>
+        <li className='navigation-mobile__element'>
           <NavLink to={'/explore'}
             style={({ isActive }) => isActive ? activeStyle : unActiveStyle}
           >
@@ -40,7 +40,7 @@ export const NavigationMobile = (props: Props) => {
             </span>
           </NavLink>
         </li>
-        <li className='navigation-mobile-element'>
+        <li className='navigation-mobile__element'>
           <NavLink to={'/promo'}
            style = {({isActive}) => isActive?activeStyle : unActiveStyle}>
             <span>
@@ -51,7 +51,7 @@ export const NavigationMobile = (props: Props) => {
             </span>
           </NavLink>
         </li>
-        <li className='navigation-mobile-element'>
+        <li className='navigation-mobile__element'>
           <NavLink to={'/save'}
             style={({ isActive }) => isActive ? activeStyle : unActiveStyle}>
             <span>
@@ -62,7 +62,7 @@ export const NavigationMobile = (props: Props) => {
             </span>
           </NavLink>
         </li>
-        <li className='navigation-mobile-element'>
+        <li className='navigation-mobile__element'>
           <NavLink to={'/account'}
             style={({ isActive }) => isActive ? activeStyle : unActiveStyle}>
             <span>

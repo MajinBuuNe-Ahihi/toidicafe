@@ -55,7 +55,7 @@
   grid-area: m5;
 }
 
-.form-information-basic-container {
+.form-information-basic {
   display: grid;
   grid-template-areas:'l1 i1'
                       'l1 m1'
@@ -134,7 +134,7 @@
 }
 
 @media screen and (max-width: 990px) {
-  .form-information-basic-container {
+  .form-information-basic {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;

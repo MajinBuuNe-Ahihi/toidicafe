@@ -22,9 +22,9 @@ export const Notification = (props: Props) => {
   }, [deviceCurrent])
   
   return (
-    <div className='header-notification'>
-      <div className='header-notification-button' onClick={()=>openDropDown()}>
-        <img className='header-notification-button__icon' src={bell} />
+    <div className='header__noti'>
+      <div className='header__noti-button' onClick={()=>openDropDown()}>
+        <img className='header__noti-button-icon' src={bell} />
       </div>
       <CSSTransition
         in={open && props.trigger == 2}

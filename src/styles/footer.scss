@@ -10,14 +10,14 @@
   width: 100%;
 }
 
-.footer-top {
+.footer__top {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.footer-top-container {
+.footer__top-container {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -28,7 +28,7 @@
   border-bottom: 3px solid $primary-color;
 }
 
-.footer-top-container__col3 {
+.footer__top-col3 {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -36,7 +36,7 @@
   flex: 1;
 }
 
-.footer-top__footer-logo {
+.footer__top-logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,12 +45,12 @@
   height: 60px;
 }
 
-.footer-top__footer-logo__image {
+.footer__top-logo__image {
   height: 100%;
   width: 100%;
 }
 
-.footer-top__footer-partner {
+.footer__top-partner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@
   margin-top: 10px;
 }
 
-.footer-top-footer-partner-button {
+.footer__top-footer-partner-button {
   display: flex;
   gap: 10px;
   height: 100%;
@@ -75,17 +75,17 @@
   }
 }
 
-.footer-top__footer-following-us,
-.footer-top__footer-about-us {
+.footer__top-follow-us,
+.footer__top-about {
   color: $secondary-color-label;
   font-size: 25px;
   margin-bottom: 10px;
 }
 
-.footer-top__footer-list-following-social,
-.footer-top__footer-list-information {
+.footer__top-follow-social,
+.footer__top-info {
   list-style: none;
-  .social-element {
+  .social__element {
     margin-bottom: 3px;
     display: flex;
     justify-content: flex-start;
@@ -117,13 +117,13 @@
     }
   }
 
-  .social-element-icon {
+  .social__element-icon {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .social-element-link {
+  .social__element-link {
     color: $secondary-color-label;
     overflow: hidden;
     padding-bottom: 2px;
@@ -142,7 +142,7 @@
   }
 }
 
-.footer-top__footer-list-information__element {
+.footer__top-info-element {
   margin-bottom: 3px;
   a {
     color: $secondary-color-label;
@@ -171,7 +171,7 @@
 }
 
 
-.footer-copyright {
+.footer__copyright {
   display: flex;
   justify-content: center;
   padding: 20px;

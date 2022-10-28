@@ -13,8 +13,8 @@ export function SwitchButton({state,className}: Props) {
   },[switchbtn])
 
   return (
-    <div className={`swicth-button-wrapper ${switchbtn && 'active'} ${className}`}>
-      <span className='switch-button-point' onClick={()=>setSwitchbtn(pre => !pre)}>
+    <div className={`switch-button ${switchbtn && 'active'} ${className}`}>
+      <span className='switch-button__point' onClick={()=>setSwitchbtn(pre => !pre)}>
       </span>
     </div>
   )

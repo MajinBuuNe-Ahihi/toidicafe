@@ -14,7 +14,7 @@
   margin: 0;
 }
 
-.banner-desktop-slogan-search-container {
+.banner-slogan-desktop {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -31,12 +31,14 @@
   padding: 50px;
 }
 
-.banner-desktop-slogan-search-container__slogan {
-  color: $primary-color
+
+.Typewriter__wrapper,
+.banner-slogan-desktop__slogan {
+  color: $primary-color !important;
 }
 
-.banner-desktop-slogan-search-container__title {
-  color: $primary-color
+.banner-slogan-desktop__title {
+  color: $primary-color !important;
 }
 
 .video-banner {
@@ -72,7 +74,7 @@
 }
 
 .banner-mobile {
-  .banner-desktop-slogan-search-container {
+  .banner-slogan-desktop {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -84,12 +86,12 @@
     padding: 20px;
   }
 
-  .banner-desktop-slogan-search-container__slogan {
+  .banner-slogan-desktop__slogan {
     font-size: 20px;
     color: $primary-color
   }
 
-  .banner-desktop-slogan-search-container__title {
+  .banner-slogan-desktop__title {
     display: none;
   }
 }

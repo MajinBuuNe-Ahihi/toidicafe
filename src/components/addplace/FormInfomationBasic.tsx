@@ -40,7 +40,7 @@ export default function FormInfomationBasic({ errors, touched, handleChange }: P
   },[ownerState])
 
   return (
-    <div className='form-information-basic-container'>
+    <div className='form-information-basic'>
       <label className='form-label form-label-1' htmlFor='name'>Tên quán <span>*</span></label>
       <Field className={'form-input form-input-1'.concat(errors.name && touched.name ?' error':'')} name='name' placeholder="Nhap ten quan"/>
       {errors.name && touched.name ? (

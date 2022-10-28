@@ -13,11 +13,11 @@ export function Social({ }: Props) {
   return (
     <>{
       sidebarSocial.map((e: Socials, index) =>   
-        <li key={index} className='social-element'>
-          <span className={`social-element-icon icon-${e.name}`}>
+        <li key={index} className='social__element'>
+          <span className={`social__element-icon icon-${e.name}`}>
             {e.icon}
           </span>
-          <a href={e.link} target={'_blank'} className='social-element-link'>{e.name}</a>
+          <a href={e.link} target={'_blank'} className='social__element-link'>{e.name}</a>
         </li>
       )
     }</>

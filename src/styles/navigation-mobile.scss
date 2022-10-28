@@ -15,7 +15,7 @@
   background-color: $primary-color;
 }
 
-.navigation-mobile-container {
+.navigation-mobile__container {
   max-width: 400px;
   display: flex;
   justify-content: space-around;
@@ -24,7 +24,7 @@
   list-style: none;
 }
 
-.navigation-mobile-element {
+.navigation-mobile__element {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,10 +45,10 @@
 }
 
 @media screen and (max-width: 400px){
-  .navigation-mobile-container {
+  .navigation-mobile__container {
       width: 100%;
     }
-    .navigation-mobile-element {
+    .navigation-mobile__element {
       width: 75px;
       a {
         padding: 5px 0;

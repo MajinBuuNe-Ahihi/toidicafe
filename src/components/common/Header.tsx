@@ -25,24 +25,24 @@ export const Header = (props: Props) => {
   return (
     <>
     <div className='header'> 
-      <div className= {'header-container'}>
-        <div className={'header-container__left'}>
-          <div className= {'header-logo'}>
+      <div className= {'header__container'}>
+        <div className={'header__container-left'}>
+          <div className= {'header__logo'}>
           <Link to={'/'}>
-          <img src={logo} alt='' className={'header-logo__image'} /> 
+          <img src={logo} alt='' className={'header__logo-image'} /> 
           </Link>
           </div>
         </div>
-        <div className={'header-container__right'}>
-          <div className='header-container-right-1'>
+        <div className={'header__container-right'}>
+          <div className='header__container-right-1'>
             {
               url.pathname !== '/' && <SearchComponent trigger={triggerOpenModal} setTrigger={handleChangeKeyTrigger} type='header-search' placeholder='tim kiem quan cafe' currentPath={url.pathname} />  
             }
             <HeaderEXPRO trigger={triggerOpenModal} setTrigger={handleChangeKeyTrigger} />  
           </div>
-          <div className='header-container-right-2'>    
-            <div className={'header-button-write-preview'}>
-              <Link className= {'header-button-write-preview-container'} to={'/preview'}>
+          <div className='header__container-right-2'>    
+            <div className={'header__button-write-preview'}>
+              <Link className= {'header__button-write-preview-container'} to={'/preview'}>
                 <Button bg={1} type={1} padding={'10px 12px'}>
                   <>
                   <span> 
@@ -55,10 +55,10 @@ export const Header = (props: Props) => {
                 </Button>
               </Link>
             </div>
-            <div className={'header-login'}>
+            <div className={'header__login'}>
               {
                 false ?
-                  <div className={'header-login-button'}>
+                  <div className={'header__login-button'}>
                     <Button type={1} bg={2} padding={'10px 12px'}>
                       <span>
                         Dang nhap
@@ -66,10 +66,10 @@ export const Header = (props: Props) => {
                   </Button>
                   </div>
                   :
-                  <div className='header-feature-loggined'>
-                      <div className='header-location-saved-button'>
+                  <div className='header__feature-loggined'>
+                      <div className='header__location-saved'>
                         <Link to={'/save'}>
-                          <img src={bookmark} alt='book mark' className='header-location-saved-button__image' />
+                          <img src={bookmark} alt='book mark' className='header__location-saved-image' />
                         </Link>
                       </div>
                       <Notification trigger={triggerOpenModal} setTrigger={handleChangeKeyTrigger}/>
@@ -79,20 +79,20 @@ export const Header = (props: Props) => {
               </div>
             {
                url.pathname == '/' ? 
-              <div className='header-near-place-button'>
+              <div className='header__near-place'>
                 <Link to={'/near-you'}>
                   <span>
                     <ICON.HiLocationMarker size={25}/>
                   </span>
                 </Link>
               </div>:
-              <div className='header-search-button' onClick={() => dispatch(searchmobile())}>
+              <div className='header__search-button' onClick={() => dispatch(searchmobile())}>
                 <span>
                   <ICON.BiSearch size={25}/>
                 </span>
               </div>
             }
-            <div className='header-more-feature-button' onClick={()=>dispatch(sidebar())}>
+            <div className='header__more-feature' onClick={()=>dispatch(sidebar())}>
                 <span>
                   <ICON.HiViewGrid size={25}/>
                 </span>

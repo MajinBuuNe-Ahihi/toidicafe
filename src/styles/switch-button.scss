@@ -1,6 +1,6 @@
 @import './varible';
 
-.switch-button-point {
+.switch-button__point {
   height: 16px;
   width: 16px;
   border-radius: 50%;
@@ -16,7 +16,7 @@
   }
 }
 
-.swicth-button-wrapper {
+.switch-button {
   height: 17px;
   width: 35px;
   border-radius: 150px;
@@ -26,7 +26,7 @@
   transition: 0.8s linear;
   &.active {
     background-color: $secondary-color;
-    .switch-button-point {
+    .switch-button__point {
       left: calc(100% - 16px);
     }
   }

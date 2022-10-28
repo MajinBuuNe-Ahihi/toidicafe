@@ -21,18 +21,18 @@ let arrField = [{ name: 'phone', label: 'Điện thoại', placeholder: 'Nhap so
 
 export default function FormcontacttInformation({errors,touched }: Props) {
   return (
-    <div className='form-contact-information-wrapper'>
+    <div className='form-contact-information'>
       {
         arrField.map(({ name, placeholder, label }, index) => 
         { let wrong = (name == 'email' || name == 'phone') && errors[`${name == 'email' ? 'email' : 'phone'}`] &&
           touched[`${name == 'email' ? 'email' : 'phone'}`] 
           return (
-          <div className='form-contact-information-row' key={index}>
-          <label className= {'form-label-contact-info'} htmlFor={name}>{label}:</label>
-          <div className="form-contact-container-input">
-           <Field className={'form-input-contact-info'.concat(wrong?' error':'')} name={name} placeholder={placeholder} />
+          <div className='form-contact-information__row' key={index}>
+          <label className= {'form-contact-information__label'} htmlFor={name}>{label}:</label>
+          <div className="form-contact-information__input">
+           <Field className={'form-contact-information__info'.concat(wrong?' error':'')} name={name} placeholder={placeholder} />
           { wrong &&
-          <span className={'form-error-message-contact-info'}>{errors[`${name == 'email' ? 'email' : 'phone'}`]}</span>}
+          <span className={'form-contact-information__error'}>{errors[`${name == 'email' ? 'email' : 'phone'}`]}</span>}
           </div>
           </div>
           )
