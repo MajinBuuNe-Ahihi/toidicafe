@@ -50,19 +50,27 @@ html {
   border-radius: 25px;
 }
 
+div {
+  color:#1a1a1a;
+}
+
+button {
+  color:rgba(255, 255, 255, 1);
+}
 
 body {
   margin: 0;
   width: 100vw;
   position: relative;
   overflow-x: hidden;
-  
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+
 
 button {
   border-radius: 8px;
@@ -87,7 +95,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   button {
-    background-color: #f9f9f9;
+    color: #f9f9f9;
   }
 }
 
@@ -100,8 +108,8 @@ button:focus-visible {
   justify-content: space-between;
   align-items: stretch;
   overflow-x: hidden;
-  background: #ffffff;
-  z-index: -1;
+  z-index: 0;
+  background-color: #ffffff;
 }
 
 .modal-dropdown-enter {
