@@ -47,10 +47,6 @@
   width: 30px;
   border-radius: 50%;
   box-shadow: $shadow-button;
-  @include mobile() {
-    height: 25px;
-    width: 25px;
-  }
 }
 
 .preview-image__image {

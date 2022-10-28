@@ -56,7 +56,7 @@ body {
   width: 100vw;
   position: relative;
   overflow-x: hidden;
-  background-color: #ffffff;
+  
 }
 
 h1 {
@@ -100,6 +100,8 @@ button:focus-visible {
   justify-content: space-between;
   align-items: stretch;
   overflow-x: hidden;
+  background: #ffffff;
+  z-index: -1;
 }
 
 .modal-dropdown-enter {
