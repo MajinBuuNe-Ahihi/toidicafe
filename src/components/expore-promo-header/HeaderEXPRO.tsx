@@ -91,7 +91,6 @@ export default function HeaderEXPRO({ trigger,setTrigger}: Props) {
       </div>
       </CSSTransition>
     </div>    
-        
     }
     </>
   )

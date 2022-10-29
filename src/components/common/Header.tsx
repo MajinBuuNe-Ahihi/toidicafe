@@ -7,7 +7,8 @@ import { UserHeader } from '../userdropdown'
 import HeaderEXPRO from '../expore-promo-header/HeaderEXPRO'
 import { SearchComponent } from '../search'
 import { useAppDispatch, useAppSelector } from '../../hooks'
-import { sidebar,searchmobile } from '../../sliceredux'
+import { sidebar, searchmobile, overlay, popup } from '../../sliceredux'
+import { login } from '../../sliceredux/login.slice'
 import logo from '../../assets/logo.svg'
 import bookmark from '../../assets/bookmark2.svg'
 import '../../styles/header.scss'
@@ -17,6 +18,7 @@ type Props = {}
 export const Header = (props: Props) => {
   const url = useLocation()
   const [triggerOpenModal, setTriggerOpenModal] = useState<number>(useAppSelector((state)=> state.trigger.value)) // create a trigger check only a modal show when click dropdown
+  const { logged } = useAppSelector((state) => state.loginmodal);
   const dispatch = useAppDispatch()
   const handleChangeKeyTrigger = (key: number) => {
     setTriggerOpenModal(key);
@@ -57,9 +59,9 @@ export const Header = (props: Props) => {
             </div>
             <div className={'header__login'}>
               {
-                false ?
+                !logged ?
                   <div className={'header__login-button'}>
-                    <Button type={1} bg={2} padding={'10px 12px'}>
+                      <Button type={1} bg={2} padding={'10px 12px'} onClick={() => { dispatch(popup()); dispatch(login()) }}>
                       <span>
                         Dang nhap
                       </span>

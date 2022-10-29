@@ -61,6 +61,7 @@
   align-items: center;
   flex: 1;
 }
+
 .header__container-right-2 {
   justify-content: flex-end;
   flex: none;
@@ -98,31 +99,24 @@
 
 .header__button-write-preview-container {
   transition: 0.5s linear all;
+  height: 47px !important;
   span {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  button {
-    color: $secondary-color-label;
-  }
-  &:hover {
-    button {
-      color: $secondary-color-label;
-    }
-  }
 }
 
 .header__login {
-
+  height: 100% !important;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 .header__login-button {
-  color: $secondary-color;
+  height: 47px !important;
   transition: 0.5s linear all;
-  &:hover {
-    color: $secondary-color-label;
-  }
 }
 
 .header__search-button,

@@ -140,6 +140,27 @@ button:focus-visible {
   background-color: #24242483;
   backdrop-filter: blur(10px);
 }
+
+.sidebar-enter {
+  transform: translateX(100%);
+}
+
+.sidebar-enter-active {
+  transform: translateX(0%);
+  transform-origin: 100% 50%;
+  transition: transform 300ms;
+}
+
+.sidebar-exit {
+  transform: translateX(0%);
+}
+
+.sidebar-exit-active {
+  transform: translateX(100%);
+  transform-origin: 100% 50%;
+  transition: transform 300ms;
+}
+
 .sidebar-enter {
   transform: translateX(100%);
 }
@@ -164,3 +185,4 @@ input, textarea {
   background-color: #ffffff;
   color: black;
 }
+

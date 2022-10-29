@@ -8,6 +8,7 @@ import type { RootState } from "../store";
  6 : open search mobile
  7 : open search home
  8 : open preview image
+ 9 : open login popup
  */
 interface triggerState {
   value: number
@@ -35,11 +36,14 @@ export const TriggerOverlayandModal = createSlice({
     },
     previewimage: (state) => {
       state.value = 8
+    },
+    popup: (state) => {
+      state.value = 9
     }
   }
 })
 
-export const { overlay, sidebar, searchmobile,searchhomedesktop,previewimage} = TriggerOverlayandModal.actions
+export const { overlay, sidebar, searchmobile,searchhomedesktop,previewimage,popup} = TriggerOverlayandModal.actions
 
 export const selectCount = (state: RootState) => state.trigger.value
 

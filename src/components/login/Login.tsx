@@ -1,61 +1,49 @@
-import React from 'react'
-import { Field, Form, Formik } from 'formik'
-import * as Yup from 'yup'
-import {HiOutlineMail, AiOutlineEye, FaTimes} from '../common'
-import { useCheckpoint } from '@src/hooks'
+import { CSSTransition } from 'react-transition-group'
+import loginimage from '../../assets/coffee-break.svg'
+import { useAppDispatch, useAppSelector, useCheckpoint } from '../../hooks'
+import { overlay } from '../../sliceredux'
+import FormLogin from './FormLogin'
+import { FaTimes } from '../common'
+import '../../styles/login.scss'
 
 type Props = {}
-const SignupSchema = Yup.object().shape({
-  email: Yup.string().email('invalid email'),
-  password: Yup.string().required('password not blank')
- });
+
+
 export default function Login({ }: Props) {
+  const { value} = useAppSelector(state => state.trigger);
+  const { deviceCurrent } = useCheckpoint('');
+  const dispatch = useAppDispatch();
 
   return (
+    <>
+      {
+    (value == 9) ?
+    ((deviceCurrent === 'moblie')?
+    <CSSTransition
+      in={true}
+      timeout={500}
+      unmountOnExit
+      classNames={'login-mobile'}>
+        <div className="login">
+          <div className="login__close">
+            <FaTimes size={25} className="login__icon" onClick={() =>  dispatch(overlay())} />
+          </div>
+          <FormLogin></FormLogin>
+          <div className="login__image" style={{ backgroundImage: `url(${loginimage})`}} >
+          </div>
+        </div>
+    </CSSTransition>
+      :
     <div className="login">
-      <div className="login__form">
-        <div className="login__close">
-          <FaTimes size={25} className="login__icon" />
-        </div>
-        <div className="login__heading">
-          Đăng nhập tài khoản
-        </div>
-        <Formik
-        initialValues={{
-            email: '',
-            password: ''
-        }}
-        validationSchema={SignupSchema}
-        onSubmit={values => {
-          // same shape as initial values
-  
-        }}
-        >
-          {({ errors, touched }) => (
-            <Form className='login__form-form'>
-              <label className='login__label' htmlFor='email'>Email </label>
-              <div className="login__input-contain">
-                <Field className='login__input' name='email' />
-                <HiOutlineMail size={25} className="login__icon"></HiOutlineMail>
-              </div>
-              {errors.email && touched.email ? (
-                <span className='login__error-message'>{errors.email}</span>
-              ) : null}
-
-              <label className='login__label' htmlFor='info'>Mật khẩu</label>
-              <div className="login__input-contain">
-                <Field className='login__input' name='password' />
-                <AiOutlineEye className="login-icon" size={25}></AiOutlineEye>
-              </div>
-              {errors.email && touched.email ? (
-                <span className='login__error-message'>{errors.password}</span>
-              ) : null}
-            </Form>
-          )}
-          </Formik>
-        
+      <div className="login__close">
+        <FaTimes size={25} className="login__icon" onClick={() =>  dispatch(overlay())} />
       </div>
-      <div className="login__image"></div>
-    </div>
+      <FormLogin></FormLogin>
+      <div className="login__image" style={{ backgroundImage: `url(${loginimage})`}} >
+      </div>
+      </div>)
+      : null
+    }
+    </>
   )
 }
