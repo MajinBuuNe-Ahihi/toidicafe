@@ -160,6 +160,7 @@ button:focus-visible {
   transition: transform 300ms;
 }
 
-input {
+input, textarea {
   background-color: #ffffff;
+  color: black;
 }
