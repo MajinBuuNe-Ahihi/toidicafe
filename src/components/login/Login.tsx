@@ -1,9 +1,61 @@
 import React from 'react'
+import { Field, Form, Formik } from 'formik'
+import * as Yup from 'yup'
+import {HiOutlineMail, AiOutlineEye, FaTimes} from '../common'
+import { useCheckpoint } from '@src/hooks'
 
 type Props = {}
+const SignupSchema = Yup.object().shape({
+  email: Yup.string().email('invalid email'),
+  password: Yup.string().required('password not blank')
+ });
+export default function Login({ }: Props) {
 
-export default function Login({}: Props) {
   return (
-    <div>Login</div>
+    <div className="login">
+      <div className="login__form">
+        <div className="login__close">
+          <FaTimes size={25} className="login__icon" />
+        </div>
+        <div className="login__heading">
+          Đăng nhập tài khoản
+        </div>
+        <Formik
+        initialValues={{
+            email: '',
+            password: ''
+        }}
+        validationSchema={SignupSchema}
+        onSubmit={values => {
+          // same shape as initial values
+  
+        }}
+        >
+          {({ errors, touched }) => (
+            <Form className='login__form-form'>
+              <label className='login__label' htmlFor='email'>Email </label>
+              <div className="login__input-contain">
+                <Field className='login__input' name='email' />
+                <HiOutlineMail size={25} className="login__icon"></HiOutlineMail>
+              </div>
+              {errors.email && touched.email ? (
+                <span className='login__error-message'>{errors.email}</span>
+              ) : null}
+
+              <label className='login__label' htmlFor='info'>Mật khẩu</label>
+              <div className="login__input-contain">
+                <Field className='login__input' name='password' />
+                <AiOutlineEye className="login-icon" size={25}></AiOutlineEye>
+              </div>
+              {errors.email && touched.email ? (
+                <span className='login__error-message'>{errors.password}</span>
+              ) : null}
+            </Form>
+          )}
+          </Formik>
+        
+      </div>
+      <div className="login__image"></div>
+    </div>
   )
 }

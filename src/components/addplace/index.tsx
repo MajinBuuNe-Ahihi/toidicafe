@@ -82,7 +82,7 @@ export function AddPlace({ }: Props) {
               <FormInfomationBasic  handleChange={handleChange} errors={errors} touched={touched} />
             <div className='add-place-name-section'>Thông tin khác</div>
               <hr />
-            <FormOtherInformation errors={errors} touched={touched}/>
+              <FormOtherInformation errors={errors} touched={touched}/>
             <div className='add-place-name-section'>Thông tin liên hệ</div>
               <hr />
               <FormContactInformation errors={errors} touched={touched} />
