@@ -5,6 +5,9 @@ import { overlay } from '../../sliceredux'
 import FormLogin from './FormLogin'
 import { FaTimes } from '../common'
 import '../../styles/login.scss'
+import { useState } from 'react'
+import ForgetPassword from './ForgetPassword'
+import Register from './Register'
 
 type Props = {}
 
@@ -13,6 +16,8 @@ export default function Login({ }: Props) {
   const { value} = useAppSelector(state => state.trigger);
   const { deviceCurrent } = useCheckpoint('');
   const dispatch = useAppDispatch();
+  const [currentPage, setCurrenrPage] = useState<number>(1);
+  /* 0: current 1: forget 2: signup */
 
   return (
     <>
@@ -28,22 +33,31 @@ export default function Login({ }: Props) {
           <div className="login__close">
             <FaTimes size={25} className="login__icon" onClick={() =>  dispatch(overlay())} />
           </div>
-          <FormLogin></FormLogin>
+          {
+            !currentPage ?
+            <FormLogin changePage={setCurrenrPage} ></FormLogin>:currentPage ==1?
+            <ForgetPassword changePage={setCurrenrPage}/>: <Register changePage={setCurrenrPage} />
+          }
           <div className="login__image" style={{ backgroundImage: `url(${loginimage})`}} >
           </div>
         </div>
     </CSSTransition>
-      :
-    <div className="login">
-      <div className="login__close">
-        <FaTimes size={25} className="login__icon" onClick={() =>  dispatch(overlay())} />
-      </div>
-      <FormLogin></FormLogin>
-      <div className="login__image" style={{ backgroundImage: `url(${loginimage})`}} >
-      </div>
-      </div>)
-      : null
-    }
+    :
+      <div className="login">
+        <div className="login__close">
+          <FaTimes size={25} className="login__icon" onClick={() =>  dispatch(overlay())} />
+        </div>
+        {
+          !currentPage ?
+          <FormLogin changePage={setCurrenrPage} ></FormLogin>:currentPage ==1?
+          <ForgetPassword changePage={setCurrenrPage}/>: <Register changePage={setCurrenrPage} />
+        }
+        <div className="login__image" style={{ backgroundImage: `url(${loginimage})`}} >
+        </div>
+      </div> 
+        )
+        : null
+      }
     </>
   )
 }

@@ -30,6 +30,7 @@
   }
 }
 
+.login__forget,
 .login__form {
   width: 50%;
   padding: 20px;
@@ -50,6 +51,11 @@
   @include mobile() {
     font-size: 20px;
   }
+}
+
+.login__title {
+  margin-top: 20px;
+  margin-bottom: -20px;
 }
 
 .login__form-form {
@@ -218,19 +224,21 @@
   text-transform: capitalize;
 } 
 
-.login__forget-link {
+.login__forget-button {
   margin: auto;
   margin-top: 20px;
   display: flex;
   font-size: 20px;
   color: $secondary-color;
   font-weight: bold;
+  cursor: pointer;
   @include mobile() {
     margin-bottom: 0;
   }
   
 }
 
+.login__back,
 .login__signup {
   display: flex;
   width: 100%;
@@ -239,9 +247,11 @@
   font-size: 17px;
 }
 
+.login__back-button,
 .login__signup-button {
   color: $secondary-color;
   font-weight: bold;
   font-size: 20px;
   margin-left: 10px;
+  cursor: pointer;
 }
