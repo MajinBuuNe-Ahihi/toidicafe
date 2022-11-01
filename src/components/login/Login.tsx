@@ -16,7 +16,7 @@ export default function Login({ }: Props) {
   const { value} = useAppSelector(state => state.trigger);
   const { deviceCurrent } = useCheckpoint('');
   const dispatch = useAppDispatch();
-  const [currentPage, setCurrenrPage] = useState<number>(1);
+  const [currentPage, setCurrenrPage] = useState<number>(0);
   /* 0: current 1: forget 2: signup */
 
   return (
