@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../components/layout'
-import { Home, Promo, Page404, AddPlace, About, Contact } from '../components'
+import { Home, Promo, Page404, AddPlace, About, Contact, Preview  } from '../components'
 
 
 
@@ -16,6 +16,7 @@ export function RouterMain({}: Props) {
         <Route path='add-place' element={<AddPlace />}></Route>
         <Route path='about' element={<About />}></Route>
         <Route path='contact' element={<Contact />}></Route>
+        <Route path='preview' element={<Preview />}></Route>
         {/* <Route path='profile' element={<></>}>
           <Route path=':id' element={<></>} />
           <Route path='settings' element={<></>} />
