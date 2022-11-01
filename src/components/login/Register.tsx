@@ -49,7 +49,7 @@ export default function Register({changePage}: Props) {
               <AiOutlineUser className="login__icon" size={25}></AiOutlineUser>
             </div>
             {errors.name && touched.name ? (
-              <span className='login__error-message'>{errors.password}</span>
+              <span className='login__error-message'>{errors.name}</span>
             ) : null}
             <label className='login__label' htmlFor='info'>Mật khẩu</label>
             <div className="login__input-contain">
