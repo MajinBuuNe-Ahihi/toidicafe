@@ -17,10 +17,10 @@ const SignupSchema = Yup.object().shape({
   owner: Yup.string(),
   phone: Yup.string().min(10, 'invalid numberphone'),
   email: Yup.string().email('invalid email'),
-  time_open: Yup.string().matches(/([0-1][0-9]|[2][0-3]):[0-5][0-9]/, "invalid format time"),
-  time_closed: Yup.string().matches(/([0-1][0-9]|[2][0-3]):[0-5][0-9]/, "invalid format time")
+  time_open: Yup.string().matches(/^([0-1][0-9]|[2][0-3]):[0-5][0-9]$/, "invalid format time"),
+  time_closed: Yup.string().matches(/^([0-1][0-9]|[2][0-3]):[0-5][0-9]$/, "invalid format time")
  });
-export function AddPlace({ }: Props) {
+export default function AddPlace({ }: Props) {
   
   const showToast = () => {
     toast.success('🦄 Wow so easy!', {
@@ -66,7 +66,6 @@ export function AddPlace({ }: Props) {
           pass_wifi: '',
           style_shop: [],
           convenient:[]
-          
         }}
         validationSchema={SignupSchema}
         onSubmit={values => {
@@ -92,7 +91,8 @@ export function AddPlace({ }: Props) {
             <div className='add-place-name-section'>Menu</div>
               <hr />
               <HandleUpload></HandleUpload>
-            <Button typefunc={{type:'submit'}} className='add-place-button' type={2} bg={1} children={<span className='add-place-button-container'>
+              <Button typefunc={{ type: 'submit' }} className='add-place-button' type={2}
+                bg={1} children={<span className='add-place-button-container'>
               <AiOutlinePlus size={25} />
               <span>
                 Them dia chi

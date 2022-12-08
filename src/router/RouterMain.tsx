@@ -1,9 +1,14 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../components/layout'
-import { Home, Promo, Page404, AddPlace, About, Contact, Preview  } from '../components'
+import { Page404  } from '../components'
 
-
+const Home = React.lazy(()=>import('../components/Home'))
+const  Promo   = React.lazy(()=>import('../components/Promo'))
+const  AddPlace  = React.lazy(() => import('../components/addplace'))
+const  About= React.lazy(() => import('../components/About'))
+const  Contact= React.lazy(() => import('../components/Contact'))
+const  Preview  = React.lazy(() => import('../components/preview/Preview'))
 
 type Props = {}
 

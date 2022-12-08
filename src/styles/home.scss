@@ -22,7 +22,6 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
   overflow: hidden;
   gap: 30px;
   @include mobile() {
@@ -64,9 +63,6 @@
 .famous-destionation-wrapper {
   width: 100%;
   height: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
 }
 
 .home-section-suggest-place__text {
@@ -98,7 +94,6 @@
 
 .home-section-suggest-place {
   width: 100%;
-  max-width: 1200px;
   display: grid;
   grid-template-areas: 'i p'
                        'i b';

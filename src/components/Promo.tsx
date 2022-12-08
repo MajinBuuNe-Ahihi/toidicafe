@@ -2,6 +2,7 @@ import React from 'react'
 import discount from '../assets/discount.svg'
 import { CardItem } from './common'
 import '../styles/promo.scss'
+import { Col, Container, Row } from 'react-bootstrap'
 type Props = {}
 
 let promotion = [{
@@ -187,27 +188,35 @@ let promotion = [{
   }
 ]
 
-export  function Promo({}: Props) {
+function Promo({}: Props) {
   return (
     <div className='promotion-wrapper'>
-      <div className='promotion-container'>
-        <div className='promotion-header'>
-        <div className='promotion-header__heading'>
-          Cập nhật khuyến mãi hiện hành
-        </div>
-        <div className='promotion-header__text'>
-          Bạn đang tìm kiếm một góc cafe để sống ảo? <br/>
-          Hãy tiết kiệm hơn với các chương trình khuyến mãi của chúng tôi ở dưới đây.
-        </div>
-        <img src={discount} alt='discount' className='promotion-header__image' />
-      </div>
-      <div className='promotion-list'>
-        {
-          promotion.map(item => <CardItem image={item.image} children={item.children} type={'promotion'} />
-          )
-        }
-      </div>
-      </div>
+      <Container className='promotion-container' fluid="md">
+        <Row className='promotion-header justify-content-between'>
+          <Col lg={6} xs={12}>
+            <div className='promotion-header__heading'>
+              Cập nhật khuyến mãi hiện hành
+            </div>
+            <div className='promotion-header__text'>
+              Bạn đang tìm kiếm một góc cafe để sống ảo? <br/>
+              Hãy tiết kiệm hơn với các chương trình khuyến mãi của chúng tôi ở dưới đây.
+            </div>
+          </Col>
+          <Col md={3} xs={12}>
+            <img src={discount} alt='discount' className='promotion-header__image' />
+          </Col>
+        </Row>
+        <Row className='promotion-list g-3 algin-items-stretch'>
+          {
+            promotion.map(item => <Col xs={12}  md={6} lg={4} xxl={3}>
+            <CardItem image={item.image} children={item.children} type={'promotion'} />
+            </Col> 
+            )
+          }
+        </Row>
+      </Container>
     </div>
   )
 }
+
+export default  Promo;

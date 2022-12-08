@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 type Props = {}
 
-export  function Profile({}: Props) {
+export  default function Profile({}: Props) {
   return (
     <div className="profile-wrapper">
       <Outlet/>

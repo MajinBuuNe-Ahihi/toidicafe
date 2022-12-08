@@ -11,7 +11,6 @@
 }
 
 .contact-heading {
-  grid-area: h;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -31,7 +30,6 @@
 }
 
 .contact-form {
-  grid-area: f;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -94,19 +92,12 @@
 }
 
 .contact-image {
-  grid-area: i;
-  height: 300px;
+  height: 400px;
   width: 300px;
   display: flex;
-  align-self: flex-end;
-  margin-left: 20px;
 }
 
 .contact-contain {
-  display: grid;
-  grid-template-areas: 'h ...'
-                       'f i';
-  grid-template-columns: 65% 35%;
   width: 100%;
   padding: 30px;
   border-radius: 10px;
@@ -116,12 +107,8 @@
   background: $primary-color;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 768px) {
   .contact-contain {
-    display: grid;
-    grid-template-areas: 'h '
-      'f';
-    grid-template-columns: 1fr;
     padding: 26px 40px;
     margin-bottom: 80px;
   }

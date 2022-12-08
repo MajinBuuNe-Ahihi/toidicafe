@@ -22,18 +22,20 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
   align-items: flex-start;
   padding: 30px 20px 20px;
   border-bottom: 3px solid $primary-color;
 }
 
-.footer__top-col3 {
+.footer__top-list {
+  width: 100%;
+}
+
+.footer__top-col{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  flex: 1;
 }
 
 .footer__top-logo {
@@ -121,6 +123,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $primary-color;
   }
 
   .social__element-link {

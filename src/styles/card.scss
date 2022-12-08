@@ -7,21 +7,13 @@
   align-items: stretch;
   overflow: hidden;
   position: relative;
+  height: 100%;
   top: 0;
   left: 0;
   border-radius: 10px;
 }
 
-.card-item-component--pupose-need {
-  height: 100%;
-}
-
-.card-item-component--near-you {
-  height: 100%;
-}
-
 .card-item-component--famous-destination{
-  height: 300px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +21,6 @@
 }
 
 .card-item-component--promotion{
-  height: 372px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

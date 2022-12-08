@@ -2,6 +2,7 @@ import React from 'react'
 import { CardItem } from '../common';
 import { useCheckpoint } from '../../hooks';
 import '../../styles/home.scss'
+import { Col, Container, Row } from 'react-bootstrap';
 
 type Props = {}
 const card2 = [{
@@ -88,13 +89,15 @@ const card2 = [{
 function ListItemFamous({ }: Props) {
   const { deviceCurrent} = useCheckpoint('')
   return (
-    <div className='famous-destionation-wrapper'>
+    <Container className='famous-destionation-wrapper'>
+      <Row className = {"gy-3"}>
       { 
         card2.slice(0,deviceCurrent == 'mobile'?3:card2.length).map((item,index) =>
-        <CardItem key={index} image={item.image} children={item.children} type={'famous-destination'} />
+          <Col xs={11} md={6} lg={4} xl = {3}> <CardItem key={index} image={item.image} children={item.children} type={'famous-destination'} /></Col>
         )
       }
-    </div>
+      </Row>
+    </Container>
   )
 }
 

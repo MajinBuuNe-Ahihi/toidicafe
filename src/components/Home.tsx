@@ -7,6 +7,7 @@ import '../styles/home-banner.scss';
 import { Button } from './common';
 import {useScrollPostion} from '../hooks';
 import { useNavigate } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 const card = [{
   children: <h1>Lam viec</h1>,
@@ -97,7 +98,7 @@ const card2 = [{
 ]
 
 type Props = {}
-export function Home({ }: Props) {
+export default function Home({ }: Props) {
   const nav = useNavigate();
   const redrictAddplace = () => {
     nav('/add-place')
@@ -106,14 +107,16 @@ export function Home({ }: Props) {
   return (
     <div className='home-section'>
       <BannerHome />
-      <HomeSection subclass='pupose-need' title='Mục đích bạn cần ?' children={<HomeSlide card={card} type={'pupose-need'} />} />
-      <HomeSection subclass='near-you' title='Khu vực gần đây' children={<HomeSlide card={card2} type={'near-you'} />} /> 
-      <HomeSection subclass='famous-destination' title='Địa điểm nổi bật' children={<ListItemFamous />} /> 
-      <div className='home-section-suggest-place'>
-        <img className='home-section-suggest-place__img' src={image} alt='suggest place' />
-        <span className='home-section-suggest-place__text' >Chung toi co bo lo dia diem nao ma ban biet</span>
-        <Button onClick = {()=>redrictAddplace()} className={'home-section-suggest-place__button-suggest-palace'} type={2} bg={1} children={<>Dong Gop Dia Diem</>} ></Button>
-      </div>
+      <Container>
+        <HomeSection subclass='pupose-need' title='Mục đích bạn cần ?' children={<HomeSlide card={card} type={'pupose-need'} />} />
+        <HomeSection subclass='near-you' title='Khu vực gần đây' children={<HomeSlide card={card2} type={'near-you'} />} /> 
+        <HomeSection subclass='famous-destination' title='Địa điểm nổi bật' children={<ListItemFamous />} /> 
+        <div className='home-section-suggest-place'>
+          <img className='home-section-suggest-place__img' src={image} alt='suggest place' />
+          <span className='home-section-suggest-place__text' >Chung toi co bo lo dia diem nao ma ban biet</span>
+          <Button onClick = {()=>redrictAddplace()} className={'home-section-suggest-place__button-suggest-palace'} type={2} bg={1} children={<>Dong Gop Dia Diem</>} ></Button>
+        </div>
+     </Container>
     </div>
   )
 }

@@ -45,60 +45,60 @@ let convenient = [{ value: 'Table', name: 'Ban ngoai troi' },
 
 export default function FormOtherInformation({errors,touched}: Props) {
   return (
-    <div className="form-other-information__container">
-      <div className="form-other-information__row">
-        <label className="form-other-information__label" > Thoi gian mo </label>
-        <div className="form-other-information__input-contain">
-          <div className="form-other-information__input-has-error">
-          <Field type="text" name="time_open" className="form-other-information__input" />
+    <div className='form-other-information__container'>
+      <div className='form-other-information__row'>
+        <label className='form-other-information__label' > Thoi gian mo </label>
+        <div className='form-other-information__input-contain'>
+          <div className='form-other-information__input-has-error'>
+          <Field type='text' name='time_open' className={`form-input form-other-information__input ${errors.time_open && touched.time_open && 'error'}`} />
           {errors.time_open && touched.time_open ? (
           <span className='form-error-message'>{errors.time_open}</span>
           ) : null}
           </div>
-          <span className="form-other-information__distance">den</span>
-          <div className="form-other-information__input-has-error">
-            <Field type="text"  name="time_closed" className="form-other-information__input"/>
+          <span className='form-other-information__distance'>den</span>
+          <div className='form-other-information__input-has-error'>
+            <Field type='text'  name='time_closed'  className={`form-input form-other-information__input ${errors.time_closed && touched.time_closed && 'error'}`} />
           {errors.time_closed && touched.time_closed ? (
           <span className='form-error-message'>{errors.time_closed}</span>
           ) : null}
           </div>
         </div>
       </div>
-      <div className="form-other-information__row">
-        <label className="form-other-information__label" >Khoang gia</label>
-        <div className="form-other-information__input-contain">
-          <Field type="number" name="min_cost" className="form-other-information__input-left" min={10000}  step={1000}/>
-          <span className="form-other-information__distance">den</span>
-          <Field type="number" name="max_cost" className="form-other-information__input-right" min={10000} step={1000} />
+      <div className='form-other-information__row'>
+        <label className='form-other-information__label' >Khoang gia</label>
+        <div className='form-other-information__input-contain'>
+          <Field type='number' name='min_cost' className='form-input form-other-information__input-left' min={10000}  step={1000}/>
+          <span className='form-other-information__distance'>den</span>
+          <Field type='number' name='max_cost' className='form-input form-other-information__input-right' min={10000} step={1000} />
         </div>
       </div>
-      <div className="form-other-information__row">
-        <label className="form-other-information__label" >Wifi(neu co) </label>
-        <div className="form-other-information__input-contain">
-          <Field type="text" className="form-other-information__input-left"  name="wifi"/>
-          <span className="form-other-information__distance">-</span>
-          <Field type="text" className="form-other-information__input-right" name="pass_wifi"/>
+      <div className='form-other-information__row'>
+        <label className='form-other-information__label' >Wifi(neu co) </label>
+        <div className='form-other-information__input-contain'>
+          <Field type='text' className='form-input form-other-information__input-left'  name='wifi'/>
+          <span className='form-other-information__distance'>-</span>
+          <Field type='text' className='form-input form-other-information__input-right' name='pass_wifi'/>
         </div>
       </div>
-      <div className="form-other-information__row">
-        <label className="form-other-information__label" >Kieu quan </label>
-        <div className="form-other-information__input-contain">
+      <div className='form-other-information__row'>
+        <label className='form-other-information__label' >Kieu quan </label>
+        <div className='form-other-information__input-contain'>
           {
-            style_shop.map((item:{value:string,name:string},index:number)=><label className='form-other-information_checkbox'>
-              <Field key={index} type="checkbox" name="style_shop" value={item.value} />
-               <span className="checkmark"></span>
+            style_shop.map((item:{value:string,name:string},index:number)=><label key={index} className='form-other-information_checkbox'>
+              <Field key={index} type='checkbox' name='style_shop' value={item.value} />
+               <span className='checkmark'></span>
               {item.name}
             </label>)
           }
         </div>
       </div>
-      <div className="form-other-information__row">
-        <label className="form-other-information__label" > Tien ich</label>
-        <div className="form-other-information__input-contain">
+      <div className='form-other-information__row'>
+        <label className='form-other-information__label' > Tien ich</label>
+        <div className='form-other-information__input-contain'>
           {
-            convenient.map((item:{value:string,name:string},index:number)=><label key={uuidv4()} className='form-other-information_checkbox'>
-              <Field key={index} type="checkbox" name="convenient" value={item.value} />
-              <span className="checkmark"></span>
+            convenient.map((item:{value:string,name:string},index:number)=><label key={index} className='form-other-information_checkbox'>
+              <Field type='checkbox' name='convenient' value={item.value} />
+              <span className='checkmark'></span>
               {item.name}
             </label>)
           }

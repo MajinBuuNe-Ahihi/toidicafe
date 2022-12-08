@@ -30,9 +30,9 @@ export default function FormcontacttInformation({errors,touched }: Props) {
           <div className='form-contact-information__row' key={index}>
           <label className= {'form-contact-information__label'} htmlFor={name}>{label}:</label>
           <div className="form-contact-information__input">
-           <Field className={'form-contact-information__info'.concat(wrong?' error':'')} name={name} placeholder={placeholder} />
+           <Field className={'form-input  form-contact-information__info'.concat(wrong?' error':'')} name={name} placeholder={placeholder} />
           { wrong &&
-          <span className={'form-contact-information__error'}>{errors[`${name == 'email' ? 'email' : 'phone'}`]}</span>}
+          <span className={'form-error-message form-contact-information__error'}>{errors[`${name == 'email' ? 'email' : 'phone'}`]}</span>}
           </div>
           </div>
           )

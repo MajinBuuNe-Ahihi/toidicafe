@@ -18,7 +18,7 @@ export function ButtonLoad({ setBlob }: Props) {
   return (
     <label htmlFor='upload-image' className="upload-images__area-input">
       <AiOutlineCamera  size={25} className={"upload-images__area-input-icon-plus"} />
-      <input style={{ opacity: 0 }} type="file" name="upload-image" id="upload-image" onChange={(e: ChangeEvent<HTMLInputElement>)=>loadImage(e) } />
+      <input style={{ opacity: 0 }} type="file" accept='image/*' name="upload-image" id="upload-image" onChange={(e: ChangeEvent<HTMLInputElement>)=>loadImage(e) } />
     </label>
   )
 }

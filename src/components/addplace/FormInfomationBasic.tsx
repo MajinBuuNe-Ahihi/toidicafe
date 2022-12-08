@@ -41,34 +41,56 @@ export default function FormInfomationBasic({ errors, touched, handleChange }: P
 
   return (
     <div className='form-information-basic'>
-      <label className='form-label form-label-1' htmlFor='name'>Tên quán <span>*</span></label>
-      <Field className={'form-input form-input-1'.concat(errors.name && touched.name ?' error':'')} name='name' placeholder="Nhap ten quan"/>
-      {errors.name && touched.name ? (
-        <span className='form-error-message form-error-message-1'>{errors.name}</span>
-      ) : null}
-      <label className='form-label form-label-2' htmlFor='area'>Khu vực <span>*</span></label>
-      <Field className ={'form-input form-input-2'.concat(errors.area && touched.area ?' error':'')} name='area' placeholder="Chon 1 quan"/>
+      <div className="form-infomation-basic__row">
+        <label className='form-label  form__label-basic' htmlFor='name'>Tên quán <span>*</span></label>
+        <div className="form-information-basic__contain-input">
+        <Field className={'form-input '.concat(errors.name && touched.name ?' error':'')} name='name' placeholder="Nhap ten quan"/>
+        {errors.name && touched.name ? (
+          <span className='form-error-message form-error-message-1'>{errors.name}</span>
+        ) : null}
+        </div>
+      </div>
+      <div className="form-infomation-basic__row">
+      <label className='form-label  form__label-basic' htmlFor='area'>Khu vực <span>*</span></label>
+      <div className="form-information-basic__contain-input">
+      <Field className={'form-input '.concat(errors.area && touched.area ? ' error' : '')} name='area' placeholder="Chon 1 quan" />
       {errors.area && touched.area ? (
         <span className='form-error-message form-error-message-2'>{errors.area}</span>
       ) : null}
-      <label className='form-label form-label-3' htmlFor='address'>Địa chỉ <span>*</span></label>
-      <Field className ={'form-input form-input-3'.concat(errors.address && touched.address ?' error':'')} name='address' placeholder="Nhap dia chi cu the"/>
+      </div>
+      </div>
+      <div className="form-infomation-basic__row">
+      <label className='form-label  form__label-basic' htmlFor='address'>Địa chỉ <span>*</span></label>
+      <div className="form-information-basic__contain-input">
+      <Field className ={'form-input '.concat(errors.address && touched.address ?' error':'')} name='address' placeholder="Nhap dia chi cu the"/>
       {errors.address && touched.address ? (
         <span className='form-error-message form-error-message-3'>{errors.address}</span>
       ) : null}
-      <label className='form-label form-label-4' htmlFor='direct'>Chỉ đường:</label>
-      <Field className ='form-input form-input-4' name='direct' placeholder="Nhap chi duong chi tiet neu co the"/>
+      </div>
+      </div>
+      <div className="form-infomation-basic__row">
+      <label className='form-label form__label-basic' htmlFor='direct'>Chỉ đường:</label>
+      <div className="form-information-basic__contain-input">  
+      <Field className={`form-input `} name='direct' placeholder="Nhap chi duong chi tiet neu co the"/>
       {errors.direct && touched.direct ? (
         <span className='form-error-message form-error-message-4'>{errors.direct}</span>
       ) : null}
-      <label className='form-label form-label-5' htmlFor='info'>Giới thiệu:</label>
-      <Field className ='form-input form-input-5 form-input-textarea' name='info' as='textarea' placeholder="Nhap gioi thieu ve quan"/>
+      </div>
+      </div>
+      <div className="form-infomation-basic__row"> 
+      <label className='form-label form__label-basic' htmlFor='info'>Giới thiệu:</label>
+      <div className="form-information-basic__contain-input">  
+      <Field className ='form-input  form-input-textarea' name='info' as='textarea' placeholder="Nhap gioi thieu ve quan"/>
       {errors.info && touched.info? (
         <span className='form-error-message form-error-message-5'>{errors.info}</span>
       ) : null}
-      <label className='form-label form-label-6' htmlFor='owner1'>Bạn là chủ quán:</label>
+      </div>
+      </div>
+      <div className="form-infomation-basic__row form-infomation-basic__row--last">
+      <label className='form-label  form__label-basic' htmlFor='owner1'>Bạn là chủ quán:</label>
       <input type={'hidden'} name='owner' value={ownerState.toString()} id='owner-input'/>
-      <label className ='form-input-6'  htmlFor='owner'> <SwitchButton state={setOwnerState}/> </label>
+      <label className ='form-information-basic__contain-button'  htmlFor='owner'> <SwitchButton state={setOwnerState}/> </label>
+       </div>
     </div>
   )
 }

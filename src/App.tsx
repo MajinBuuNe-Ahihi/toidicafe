@@ -3,7 +3,8 @@ import  ReactDOM  from 'react-dom'
 import { ToastContainer } from 'react-toastify'
 import { ButtonScroll, Overlay,PreviewImage} from './components/common'
 import Login from './components/login/Login'
-import { RouterMain } from './router'
+import { RouterMain } from './router';
+import './styles/app.scss'
 
 function App() {
   const toast = <ToastContainer

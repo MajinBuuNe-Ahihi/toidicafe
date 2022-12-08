@@ -3,7 +3,7 @@ import '../styles/about.scss'
 
 type Props = {}
 
-export  function About({}: Props) {
+export default  function About({}: Props) {
   return (
     <div className='about-wrapper'>
       <div className='about-contain'>

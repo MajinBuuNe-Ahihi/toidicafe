@@ -1,5 +1,6 @@
 @import './function';
 @import './varible';
+@import './base';
 
 .vote-component {
   display: flex;
@@ -49,22 +50,21 @@
 
 .preview {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
-  max-width: 1200px;
+}
+
+.preview__contain {
   margin: 10px auto;
   padding: 10px 20px;
   box-shadow: $shadow-primary-card;
   border-radius: 10px;
-  @include mobile() {
-    border-radius: 0px;
-  }
-}
-
-.preview__contain {
   display: flex;
   flex-direction: column;
   width: 100%;
+  @include mobile() {
+    border-radius: 0px;
+  }
 }
 
 .preview__heading {
@@ -91,7 +91,7 @@
 }
 
 .preview__form-left {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -100,6 +100,7 @@
   }
 }
 
+.preview__your-preview,
 .preview__vote-rate {
   display: flex;
   flex-direction: column;
@@ -110,7 +111,10 @@
 .preview__section-name {
   font-size: 24px;
   color: #02020265;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   @include mobile() {
     font-size: 20px;
   }
@@ -133,4 +137,38 @@
   @include mobile() {
     padding-right: 13px;
   }
+}
+
+.preview__your-preview-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-input-textarea {
+  margin-top: 10px !important;
+}
+
+.preview__label {
+  align-self: flex-end;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.555);
+  .error {
+    color: $secondary-color;
+  }
+}
+
+.form-error-message {
+  align-self: flex-start;
+}
+
+.preview__your-preview {
+  margin: 20px 0;
+}
+
+.preview__submit {
+  margin-top: 20px;
+  width: 200px;
 }
